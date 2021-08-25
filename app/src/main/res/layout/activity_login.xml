@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF8F8"
+    android:backgroundTint="@color/white"
+    android:foregroundTint="@color/black"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="497dp"
+        android:layout_height="301dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/cambiopassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/personal_reminder" />
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Iniciar Sesión"
+        android:textColor="@color/blanco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <EditText
+        android:id="@+id/TextEmail"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:background="@drawable/paratexto"
+        android:backgroundTintMode="screen"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="  Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:lineSpacingExtra="14sp"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blanco"
+        android:textIsSelectable="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <EditText
+        android:id="@+id/TextPassword"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:background="@drawable/paratexto"
+        android:backgroundTint="#000E0B0B"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="  Contraseña"
+        android:inputType="textPassword"
+        android:lineSpacingExtra="14sp"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blanco"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
+
+    <TextView
+        android:id="@+id/cambiopassword"
+        android:layout_width="173dp"
+        android:layout_height="27dp"
+        android:backgroundTint="@color/white"
+        android:drawableTint="#0C0A0A"
+        android:shadowColor="#121010"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textColor="@color/black"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="159dp"
+        android:layout_height="35dp"
+        android:text="¿Aún no tienes cuenta?"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
+
+    <TextView
+        android:id="@+id/textcrearCuenta"
+        android:layout_width="113dp"
+        android:layout_height="30dp"
+        android:text="CREA TU CUENTA"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.821"
+        app:srcCompat="@drawable/com_facebook_favicon_blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

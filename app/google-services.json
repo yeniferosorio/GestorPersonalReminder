@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "330961849402",
+    "project_id": "gestorpersonalreminder",
+    "storage_bucket": "gestorpersonalreminder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330961849402:android:2d9a845afeaf8f44457903",
+        "android_client_info": {
+          "package_name": "com.example.GestorPersonalReminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330961849402-q2j87unqe1up29eooemf47e3ohckjrsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIM11NWHK5-IZwwwZt2_BOLa89JBQte-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330961849402-q2j87unqe1up29eooemf47e3ohckjrsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

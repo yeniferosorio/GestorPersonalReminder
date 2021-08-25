@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_Midia"
+        android:icon="@drawable/ic_baseline_wb_sunny_24"
+        android:title="Mi Día" />
+
+    <item
+        android:id="@+id/navigation_Tareas_Importantes"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Importante" />
+
+    <item
+        android:id="@+id/navigation_Mis_tareas"
+        android:icon="@drawable/ic_baseline_notes_24"
+        android:title="Tareas" />
+
+    <item
+        android:id="@+id/navigation_Misplanes"
+        android:icon="@drawable/ic_baseline_today_24"
+        android:title="Mis Planes"/>
+
+
+
+
+
+</menu>

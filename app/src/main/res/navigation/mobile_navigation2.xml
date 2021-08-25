@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/navigation_MiDia">
+
+    <fragment
+        android:id="@+id/navigation_MiDia"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/Mi_Dia"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_Importante"
+        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:label="@string/Important"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_Mis_tareas"
+        android:name="com.example.myapplication.ui.notifications.NotificationsFragment"
+        android:label="@string/Mis_tareas"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_Misplanes"
+        android:name="com.example.myapplication.ui.misplanes.MisplanesFragments"
+        android:label="@string/mis_planes"
+        tools:layout="@layout/fragment_misplanes_fragments" />
+</navigation>
