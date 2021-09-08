@@ -25,7 +25,7 @@
         android:id="@+id/btnIniciarSesion"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/botonredondo"
         android:text="Iniciar Sesión"
         android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,15 +50,15 @@
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
-        android:textColorHint="@color/blanco"
+        android:textColorHint="@color/design_default_color_on_secondary"
         android:textIsSelectable="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <EditText
         android:id="@+id/TextPassword"
@@ -75,7 +75,7 @@
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
-        android:textColorHint="@color/blanco"
+        android:textColorHint="@color/design_default_color_on_secondary"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,8 +86,8 @@
 
     <TextView
         android:id="@+id/cambiopassword"
-        android:layout_width="173dp"
-        android:layout_height="27dp"
+        android:layout_width="197dp"
+        android:layout_height="28dp"
         android:backgroundTint="@color/white"
         android:drawableTint="#0C0A0A"
         android:shadowColor="#121010"
@@ -96,59 +96,64 @@
         android:textColorLink="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.848"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="159dp"
-        android:layout_height="35dp"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
         android:text="¿Aún no tienes cuenta?"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.93" />
 
     <TextView
         android:id="@+id/textcrearCuenta"
-        android:layout_width="113dp"
-        android:layout_height="30dp"
-        android:text="CREA TU CUENTA"
+        android:layout_width="138dp"
+        android:layout_height="29dp"
+        android:text="Crea tu cuenta"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.933" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="52dp"
-        android:layout_height="45dp"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="283dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableBottom="@drawable/com_facebook_favicon_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821"
-        app:srcCompat="@drawable/googleg_standard_color_18" />
+        app:layout_constraintVertical_bias="0.863" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="52dp"
-        android:layout_height="45dp"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/ButtonGoogle"
+        android:layout_width="288dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821"
-        app:srcCompat="@drawable/com_facebook_favicon_blue" />
+        app:layout_constraintVertical_bias="0.808"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.gms.common.SignInButton>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

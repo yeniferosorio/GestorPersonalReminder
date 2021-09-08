@@ -29,11 +29,6 @@ public class Navigation_Midia extends Fragment implements AdaptadorRec.OnNoteLis
     RecyclerView recycler;
 
 
-
-
-
-
-
     public Navigation_Midia() {
     }
 
