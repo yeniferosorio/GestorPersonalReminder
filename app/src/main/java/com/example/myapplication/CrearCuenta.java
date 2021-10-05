@@ -1,12 +1,17 @@
 package com.example.myapplication;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.conexion.ConexionSQLite;
+import com.example.myapplication.conexion.Utilidades;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -62,7 +67,33 @@ public class CrearCuenta extends AppCompatActivity {
         iniciar_sesion.setOnClickListener(v -> startActivity(new Intent(CrearCuenta.this,LoginActivity.class)));
 
     }
+
+    private void RegistrarUsuariosSql(){
+        ConexionSQLite conexion= new ConexionSQLite(this,"bd_reminder",null,1);
+        SQLiteDatabase db=conexion.getWritableDatabase();
+
+        String insert="INSERT INTO "+Utilidades.TABLE_USUARIO+"("+Utilidades.CAMPO_ID+","+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_TELEFONO+","+Utilidades.CAMPO_CORREO+")"
+                +"VALUES("+edit_nombre.getText().toString()+","+edit_telefono.getText().toString()+","+edit_correo_Electronico.getText().toString()+"')";
+
+
+
+
+
+        db.close();
+    }
     private void RegistrarUsuario(){
+        ConexionSQLite conexion= new ConexionSQLite(this,"bd_reminder",null,1);
+        SQLiteDatabase db=conexion.getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put(Utilidades.CAMPO_NOMBRE,nombre);
+        values.put(Utilidades.CAMPO_TELEFONO,telefono);
+        values.put(Utilidades.CAMPO_CORREO,correo);
+
+        Long resultado= db.insert(Utilidades.TABLE_USUARIO,Utilidades.CAMPO_ID,values);
+        Toast.makeText(getApplicationContext(),"id registro:"+resultado,Toast.LENGTH_SHORT).show();
+        db.close();
+
+        
         firebaseAuth.createUserWithEmailAndPassword(correo,contrasenia).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 Map<String,Object>map=new HashMap<>();

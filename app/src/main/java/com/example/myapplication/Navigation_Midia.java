@@ -11,12 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import com.example.myapplication.model.Recordatorio_registrado;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
@@ -73,14 +72,15 @@ public class Navigation_Midia extends Fragment implements AdaptadorRec.OnNoteLis
             startActivity(intent);
         });
 
+
         }
 
     private void llenarLista() {
 
     lista_recordatorio.add(new Recordatorio_registrado("Comprar pan","comprar pan a las 7 de la tarde",R.drawable.ic_baseline_wb_sunny_24));
     lista_recordatorio.add(new Recordatorio_registrado("Tomar pastillas","tomar pastillas 1)paracetamol 2)anticonceptivos 3)ibuprofeno.",R.drawable.ic_baseline_wb_sunny_24));
-    lista_recordatorio.add(new Recordatorio_registrado(" veterinario","hora veterinario a las 3 de la tarde el dia 04/08",R.drawable.ic_baseline_wb_sunny_24));
-    lista_recordatorio.add(new Recordatorio_registrado("cortar uñas","cortar uñas al chopper",R.drawable.ic_baseline_wb_sunny_24));
+    lista_recordatorio.add(new Recordatorio_registrado(" Veterinario","hora veterinario a las 3 de la tarde el dia 04/08",R.drawable.ic_baseline_wb_sunny_24));
+    lista_recordatorio.add(new Recordatorio_registrado("Cortar uñas","cortar uñas al chopper",R.drawable.ic_baseline_wb_sunny_24));
 
     }
 

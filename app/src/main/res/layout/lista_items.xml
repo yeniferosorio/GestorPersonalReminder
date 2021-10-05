@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/blanco"
@@ -16,68 +17,113 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:backgroundTint="#00BCD4">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="116dp"
+        android:layout_height="109dp"
+        android:background="@drawable/paratexto"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/idIcono"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/ic_baseline_wb_sunny_24"
-            android:backgroundTint="@color/purple_200"
-            android:scaleType="centerCrop">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="47dp"
+            android:layout_height="match_parent">
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/idIcono"
+                android:layout_width="30dp"
+                android:layout_height="27dp"
+                android:background="@drawable/ic_baseline_wb_sunny_24"
+                android:backgroundTint="@color/com_smart_login_code"
+                android:drawablePadding="12dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.073">
+
+            </ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
-            android:layout_width="376dp"
-            android:layout_height="wrap_content"
+            android:layout_width="319dp"
+            android:layout_height="104dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/id_titulo"
-                android:layout_width="361dp"
+                android:layout_width="289dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="5dp"
                 android:text="Título"
-                android:textColor="@color/purple_200"
+                android:textColor="@android:color/holo_green_light"
                 android:textSize="20dp"
-                android:textStyle="bold">
+                android:textStyle="bold|italic">
 
             </TextView>
 
             <TextView
                 android:id="@+id/id_descripcion"
-                android:layout_width="360dp"
+                android:layout_width="291dp"
                 android:layout_height="46dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
                 android:text="Descripción"
-                android:textColor="@color/purple_200">
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="16sp"
+                android:textStyle="italic">
 
             </TextView>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="44dp"
+                    android:layout_height="33dp"
+                    android:background="@android:drawable/ic_menu_edit"
+                    android:backgroundTint="@color/purple_200"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.973"
+                    app:srcCompat="@android:drawable/ic_menu_edit" />
+
+                <ImageView
+                    android:id="@+id/deletebutton"
+                    android:layout_width="44dp"
+                    android:layout_height="33dp"
+
+                    android:background="@android:drawable/ic_menu_delete"
+                    android:backgroundTint="@color/teal_700"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="11dp"
-        android:background="@color/purpuraclaro">
-
-    </TextView>
 
 
 </LinearLayout>

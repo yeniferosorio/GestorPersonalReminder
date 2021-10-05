@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.model.Recordatorio_registrado;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -60,7 +61,7 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
     public class viewHolderRec extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView idtitulo,iddescripcion;
-        ImageView idIconos;
+        ImageView idIconos,Delete;
         OnNoteListener onNoteListener;
 
 
@@ -69,7 +70,10 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
             idtitulo=itemView.findViewById(R.id.id_titulo);
             iddescripcion=itemView.findViewById(R.id.id_descripcion);
             idIconos=itemView.findViewById(R.id.idIcono);
+            Delete=itemView.findViewById(R.id.deletebutton);
             onNoteListener=mOnNoteListener;
+
+
 
 
         }
@@ -78,6 +82,14 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
           iddescripcion.setText(item.getDescripcion());
           idIconos.setImageResource(item.getIcono());
           itemView.setOnClickListener(v -> mOnNoteListener.onNoteClick(item));
+
+          Delete.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+
+              }
+          });
+
         }
 
         @Override
@@ -88,6 +100,9 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
     }
         public interface OnNoteListener{
             void onNoteClick(  Recordatorio_registrado item);
+
+
         }
+
 
 }

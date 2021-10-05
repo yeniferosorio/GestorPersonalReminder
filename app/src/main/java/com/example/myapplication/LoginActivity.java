@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.myapplication.conexion.ConexionSQLite;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -35,14 +38,26 @@ import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.api.Authentication;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.rpc.context.AttributeContext;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
@@ -53,12 +68,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     SignInButton buttonGoogle;
     TextView cambio_password,crear_cuenta;
     private FirebaseAuth firebaseAuth;
-    private String correo,contraseña;
+    private String correo,contrasenia;
     private CallbackManager callbackManager;
     private static final String TAG = "MyActivity";
     private GoogleApiClient googleApiClient;
     public static int SIGN_IN_CODE;
-
+    ConexionSQLite conexion= new ConexionSQLite(this,"bd_personal_Reminder",null,1);
 
 
 
@@ -78,14 +93,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         button_facebook=findViewById(R.id.login_button);
         buttonGoogle=findViewById(R.id.ButtonGoogle);
 
+
+
+
+
         firebaseAuth = FirebaseAuth.getInstance();
-        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_clients_id)).requestEmail().build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
-
-
 
         cambio_password.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this,RestPass.class));
@@ -99,9 +116,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         btn_inicio_sesion.setOnClickListener(v -> {
           correo=Text_Email.getText().toString();
-          contraseña=Text_Password.getText().toString();
-          if(!correo.isEmpty()&& !contraseña.isEmpty()){
+          contrasenia=Text_Password.getText().toString();
+          if(!correo.isEmpty()&& ! contrasenia.isEmpty()){
             loginUsuario();
+
         }else{
               Toast.makeText(LoginActivity.this,"Complete los campos",Toast.LENGTH_SHORT).show();
           }
@@ -136,12 +154,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
        });
 
 
-
-
-
     }
-
-
     private void goMainScreen() {
         Intent intent = new Intent(LoginActivity.this,Opcion.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -150,7 +163,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void loginUsuario(){
-        firebaseAuth.signInWithEmailAndPassword(correo,contraseña).addOnCompleteListener(task -> {
+        firebaseAuth.signInWithEmailAndPassword(correo,contrasenia).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 startActivity(new Intent(LoginActivity.this,Opcion.class));
                 finish();
@@ -186,4 +199,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void onConnectionFailed(@NonNull @NotNull ConnectionResult connectionResult) {
 
     }
+
+
+
 }

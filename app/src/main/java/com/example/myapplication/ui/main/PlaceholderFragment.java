@@ -12,6 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.myapplication.BienvenidaDos;
+import com.example.myapplication.BienvenidaTres;
+import com.example.myapplication.BienvenidaUno;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentTabbedActivityInfoBinding;
 
@@ -25,11 +28,13 @@ public class PlaceholderFragment extends Fragment {
     private PageViewModel pageViewModel;
     private FragmentTabbedActivityInfoBinding binding;
 
-    public static PlaceholderFragment newInstance(int index) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ARG_SECTION_NUMBER, index);
-        fragment.setArguments(bundle);
+    public static Fragment newInstance(int index) {
+       Fragment fragment=null;
+       switch (index){
+           case 1: fragment=new BienvenidaUno();break;
+           case 2: fragment=new BienvenidaDos();break;
+           case 3: fragment=new BienvenidaTres();break;
+       }
         return fragment;
     }
 
