@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_menu_principal.xml" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/drawable/botonredondo.xml" value="0.4036458333333333" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_crear_cuenta.xml" value="0.33" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_importante.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_informacion.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_opcion.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_rest_pass.xml" value="0.3875" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/activity_tabbed_info.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/content_crear.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_bienvenida_uno.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_contenido_importante.xml" value="0.21965579710144928" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_first.xml" value="0.3822463768115942" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_navigation__midia.xml" value="0.33" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_navigation__tareas__importantes.xml" value="0.33" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/fragment_tabbed_activity_info.xml" value="0.32019927536231885" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/layout/lista_items.xml" value="0.5" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33697916666666666" />
+        <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/menu/menumidia.xml" value="0.33697916666666666" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

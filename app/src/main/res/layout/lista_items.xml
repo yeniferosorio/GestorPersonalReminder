@@ -1,83 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/blanco"
-    android:orientation="vertical">
+    android:layout_gravity="center"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/idDato"
+    <ImageView
+        android:id="@+id/icono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="">
-
-    </TextView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@drawable/ic_baseline_wb_sunny_24"
+        android:backgroundTint="@color/teal_700"
+        android:src="@drawable/ic_baseline_wb_sunny_24"
+        app:srcCompat="@drawable/ic_baseline_wb_sunny_24"></ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="116dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <ImageView
-            android:id="@+id/idIcono"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/TextTitulo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/ic_baseline_wb_sunny_24"
-            android:backgroundTint="@color/purple_200"
-            android:scaleType="centerCrop">
+            android:background="@drawable/paratexto"
+            android:layout_marginBottom="7dp"
 
-        </ImageView>
+            android:hint="Titulo"
+            android:textColor="?attr/colorBackgroundFloating"
+            android:textColorHint="?attr/colorBackgroundFloating"
+            android:textSize="14sp"></TextView>
 
-        <LinearLayout
-            android:layout_width="376dp"
+        <TextView
+            android:id="@+id/TextDescripcion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/id_titulo"
-                android:layout_width="361dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="5dp"
-                android:text="Título"
-                android:textColor="@color/purple_200"
-                android:textSize="20dp"
-                android:textStyle="bold">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/id_descripcion"
-                android:layout_width="360dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="15dp"
-                android:text="Descripción"
-                android:textColor="@color/purple_200">
-
-            </TextView>
-
-        </LinearLayout>
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/paratexto"
+            android:text="Descripción"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="12sp"
+            android:textStyle="italic"></TextView>
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="11dp"
-        android:background="@color/purpuraclaro">
-
-    </TextView>
-
 
 </LinearLayout>

@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.model.Recordatorio_registrado;
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRec >{
+public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRec> {
 
     ArrayList<Recordatorio_registrado> lista_recordatorio;
 
@@ -25,18 +26,18 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
 
 
     public AdaptadorRec(ArrayList<Recordatorio_registrado> itemList, Context context, OnNoteListener listener) {
-        this.mInflater= LayoutInflater.from(context);
+        this.mInflater = LayoutInflater.from(context);
         this.lista_recordatorio = itemList;
-        this.mOnNoteListener=listener;
-        this.context=context;
-
+        this.mOnNoteListener = listener;
+        this.context = context;
 
 
     }
+
     @Override
     public AdaptadorRec.viewHolderRec onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
 
-        View view =mInflater.from(parent.getContext()).inflate(R.layout.lista_items,parent,false);
+        View view = mInflater.from(parent.getContext()).inflate(R.layout.lista_items, parent, false);
         return new AdaptadorRec.viewHolderRec(view);
     }
 
@@ -57,27 +58,31 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
         return lista_recordatorio.size();
     }
 
-    public class viewHolderRec extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class viewHolderRec extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView idtitulo,iddescripcion;
+        TextView idtitulo, iddescripcion;
         ImageView idIconos;
         OnNoteListener onNoteListener;
 
 
         public viewHolderRec(View itemView) {
             super(itemView);
-            idtitulo=itemView.findViewById(R.id.id_titulo);
-            iddescripcion=itemView.findViewById(R.id.id_descripcion);
-            idIconos=itemView.findViewById(R.id.idIcono);
-            onNoteListener=mOnNoteListener;
+            idtitulo = itemView.findViewById(R.id.id_titulo);
+            iddescripcion = itemView.findViewById(R.id.id_descripcion);
+            idIconos = itemView.findViewById(R.id.idIcono);
+
+            onNoteListener = mOnNoteListener;
 
 
         }
-        void bindData(final Recordatorio_registrado item){
-          idtitulo.setText(item.getTitulo());
-          iddescripcion.setText(item.getDescripcion());
-          idIconos.setImageResource(item.getIcono());
-          itemView.setOnClickListener(v -> mOnNoteListener.onNoteClick(item));
+
+        void bindData(final Recordatorio_registrado item) {
+            idtitulo.setText(item.getTitulo());
+            iddescripcion.setText(item.getDescripcion());
+            idIconos.setImageResource(item.getIcono());
+            itemView.setOnClickListener(v -> mOnNoteListener.onNoteClick(item));
+
+
         }
 
         @Override
@@ -86,8 +91,12 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
 
         }
     }
-        public interface OnNoteListener{
-            void onNoteClick(  Recordatorio_registrado item);
-        }
+
+    public interface OnNoteListener {
+        void onNoteClick(Recordatorio_registrado item);
+
+
+    }
+
 
 }
