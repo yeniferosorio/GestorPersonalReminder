@@ -16,9 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.config.Util;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -83,31 +80,31 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         callbackManager = CallbackManager.Factory.create();
         button_facebook.setPermissions("email", "public_profile");
 
-        button_facebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d(TAGS, "Facebook:onSuccess" + loginResult);
+       // button_facebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+          //  @Override
+           // public void onSuccess(LoginResult loginResult) {
+            //    Log.d(TAGS, "Facebook:onSuccess" + loginResult);
 
-                handleFacebookAccessToken(loginResult.getAccessToken());
-                Intent i = new Intent(LoginActivity.this, Opcion.class);
-                i.putExtra("correoEnUso", "");
-                startActivity(i);
-                finish();
+            //    handleFacebookAccessToken(loginResult.getAccessToken());
+             //   Intent i = new Intent(LoginActivity.this, Opcion.class);
+             //   i.putExtra("correoEnUso", "");
+              //  startActivity(i);
+              //  finish();
 
-            }
+          //  }
 
-            @Override
-            public void onCancel() {
-                Log.d(TAGS, "Facebook:onCancel");
+         //   @Override
+           // public void onCancel() {
+               // Log.d(TAGS, "Facebook:onCancel");
 
-            }
+          //  }
 
-            @Override
-            public void onError(FacebookException error) {
-                Log.d(TAGS, "Facebook:onError", error);
+           // @Override
+          //  public void onError(FacebookException error) {
+            //    Log.d(TAGS, "Facebook:onError", error);
 
-            }
-        });
+          //  }
+      //  });
 
 
         cambio_password.setOnClickListener(v -> {
