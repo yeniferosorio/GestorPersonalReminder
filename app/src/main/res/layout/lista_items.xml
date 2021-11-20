@@ -10,11 +10,13 @@
 
     <ImageView
         android:id="@+id/idIcono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_700"
+        android:layout_width="37dp"
+        android:layout_height="79dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:src="@drawable/ic_baseline_wb_sunny_24"
-        app:srcCompat="@drawable/ic_baseline_wb_sunny_24"></ImageView>
+        app:srcCompat="@drawable/ic_baseline_wb_sunny_24"
+        app:tint="?attr/colorAccent"></ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,24 +27,25 @@
         <TextView
             android:id="@+id/id_titulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/paratexto"
-            android:layout_marginBottom="7dp"
 
             android:hint="Titulo"
             android:textColor="?attr/colorBackgroundFloating"
             android:textColorHint="?attr/colorBackgroundFloating"
-            android:textSize="14sp"></TextView>
+            android:textSize="16sp"></TextView>
 
         <TextView
             android:id="@+id/id_descripcion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginBottom="9dp"
             android:background="@drawable/paratexto"
-            android:layout_marginBottom="7dp"
-            android:text="Descripción"
-            android:textColor="@color/purpura"
-            android:textSize="12sp"
+            android:hint="Descripción"
+            android:textColor="@color/com_facebook_likeboxcountview_text_color"
+            android:textColorHint="@color/com_facebook_likeboxcountview_border_color"
+            android:textSize="14sp"
             android:textStyle="italic"></TextView>
 
     </LinearLayout>
