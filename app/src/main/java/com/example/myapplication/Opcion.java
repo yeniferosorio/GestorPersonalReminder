@@ -54,6 +54,7 @@ public class Opcion extends AppCompatActivity {
     }
 
     private final NavigationBarView.OnItemSelectedListener mOnNavigationItemSelectedListener= item -> {
+
         switch (item.getItemId()){
             case R.id.navigation_Midia:
                 loadFragment(navigation_Midia);

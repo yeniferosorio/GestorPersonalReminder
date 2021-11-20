@@ -18,7 +18,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 
@@ -73,10 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 dates = fecha.getText().toString();
                 hours = hora.getText().toString();
 
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-
             }
         });
 
@@ -89,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             timePickerDialog = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    //2:6
                     String horaDelDia = String.valueOf(hourOfDay);
                     String minutos = String.valueOf(minute);
                     if (Integer.valueOf(horaDelDia) < 10) {

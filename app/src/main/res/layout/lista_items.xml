@@ -10,13 +10,14 @@
 
     <ImageView
         android:id="@+id/idIcono"
-        android:layout_width="37dp"
-        android:layout_height="79dp"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:background="#008C6767"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:src="@drawable/ic_baseline_wb_sunny_24"
-        app:srcCompat="@drawable/ic_baseline_wb_sunny_24"
-        app:tint="?attr/colorAccent"></ImageView>
+        app:tint="?attr/colorAccent"
+        tools:ignore="ImageContrastCheck"></ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +31,6 @@
             android:layout_height="36dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/paratexto"
-
             android:hint="Titulo"
             android:textColor="?attr/colorBackgroundFloating"
             android:textColorHint="?attr/colorBackgroundFloating"

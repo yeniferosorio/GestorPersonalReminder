@@ -16,18 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.model.Recordatorio_registrado;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class Navigation_Midia extends Fragment implements AdaptadorRec.OnNoteListener {
-
-    ArrayList<Recordatorio_registrado> lista_recordatorio;
-    RecyclerView recycler;
-
+    private String emailActual;
+    private ArrayList<Recordatorio_registrado> lista_recordatorio;
+    private RecyclerView recycler;
+    private FirebaseAuth firebaseAuth;
 
     public Navigation_Midia() {
+
     }
 
     public static Navigation_Midia newInstance(String param1, String param2) {
@@ -52,6 +54,9 @@ public class Navigation_Midia extends Fragment implements AdaptadorRec.OnNoteLis
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        System.out.println(firebaseAuth.getCurrentUser().getEmail());
 
         lista_recordatorio = new ArrayList<>();
         recycler = view.findViewById(R.id.recyclerView);

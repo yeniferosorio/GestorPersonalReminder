@@ -6,6 +6,8 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbd1f8ad8c50086a2f7785345378b1f9/transformed/jetified-facebook-android-sdk-5.15.3/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cbd1f8ad8c50086a2f7785345378b1f9/transformed/jetified-facebook-android-sdk-5.15.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cbd1f8ad8c50086a2f7785345378b1f9/transformed/jetified-facebook-android-sdk-5.15.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d9e44e499d0cd8ccdce566d8c14e04f/jetified-facebook-android-sdk-5.15.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4d9e44e499d0cd8ccdce566d8c14e04f/jetified-facebook-android-sdk-5.15.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-android-sdk/5.15.3/aa4f8418fc0edd719f5be80ed3f5de88f87ea10e/facebook-android-sdk-5.15.3-javadoc.jar!/" />
