@@ -20,13 +20,13 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
 
     ArrayList<Recordatorio_registrado> lista_recordatorio;
 
-    private LayoutInflater mInflater;
+    private LayoutInflater layout;
     private Context context;
     final AdaptadorRec.OnNoteListener mOnNoteListener;
 
 
     public AdaptadorRec(ArrayList<Recordatorio_registrado> itemList, Context context, OnNoteListener listener) {
-        this.mInflater = LayoutInflater.from(context);
+        this.layout = layout;
         this.lista_recordatorio = itemList;
         this.mOnNoteListener = listener;
         this.context = context;
@@ -35,10 +35,11 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
     }
 
     @Override
-    public AdaptadorRec.viewHolderRec onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public viewHolderRec onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
 
-        View view = mInflater.from(parent.getContext()).inflate(R.layout.lista_items, parent, false);
-        return new AdaptadorRec.viewHolderRec(view);
+        View view = layout.from(parent.getContext()).inflate(R.layout.lista_items, parent, false);
+        viewHolderRec vh = new viewHolderRec(view);
+        return vh;
     }
 
     @Override
@@ -47,7 +48,7 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
         holder.idtitulo.setText(lista_recordatorio.get(position).getTitulo());
         holder.iddescripcion.setText(lista_recordatorio.get(position).getDescripcion());
         holder.idIconos.setImageResource(lista_recordatorio.get(position).getIcono());
-        holder.bindData(lista_recordatorio.get(position));
+        holder.bind(lista_recordatorio.get(position),mOnNoteListener);
 
 
     }
@@ -57,6 +58,7 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
 
         return lista_recordatorio.size();
     }
+
 
     public class viewHolderRec extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -70,21 +72,20 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
             idtitulo = itemView.findViewById(R.id.id_titulo);
             iddescripcion = itemView.findViewById(R.id.id_descripcion);
             idIconos = itemView.findViewById(R.id.idIcono);
-
-            onNoteListener = mOnNoteListener;
+            //onNoteListener = mOnNoteListener;
 
 
         }
 
-        void bindData(final Recordatorio_registrado item) {
+        void bind(final Recordatorio_registrado item,final OnNoteListener listener) {
             idtitulo.setText(item.getTitulo());
             iddescripcion.setText(item.getDescripcion());
             idIconos.setImageResource(item.getIcono());
-            itemView.setOnClickListener(v -> mOnNoteListener.onNoteClick(item));
+           //itemView.setOnClickListener(v -> { mOnNoteListener.onNoteClick(item);
+           //});
 
 
         }
-
         @Override
         public void onClick(View v) {
 
@@ -94,7 +95,6 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
 
     public interface OnNoteListener {
         void onNoteClick(Recordatorio_registrado item);
-
 
     }
 

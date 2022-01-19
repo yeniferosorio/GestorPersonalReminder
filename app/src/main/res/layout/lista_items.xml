@@ -10,13 +10,13 @@
 
     <ImageView
         android:id="@+id/idIcono"
-        android:layout_width="38dp"
-        android:layout_height="wrap_content"
+        android:layout_width="37dp"
+        android:layout_height="36dp"
         android:background="#008C6767"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:src="@drawable/ic_baseline_wb_sunny_24"
-        app:tint="?attr/colorAccent"
+        app:tint="@android:color/holo_blue_dark"
         tools:ignore="ImageContrastCheck"></ImageView>
 
     <LinearLayout
@@ -43,6 +43,7 @@
             android:layout_marginBottom="9dp"
             android:background="@drawable/paratexto"
             android:hint="Descripción"
+            android:textAlignment="textStart"
             android:textColor="@color/com_facebook_likeboxcountview_text_color"
             android:textColorHint="@color/com_facebook_likeboxcountview_border_color"
             android:textSize="14sp"

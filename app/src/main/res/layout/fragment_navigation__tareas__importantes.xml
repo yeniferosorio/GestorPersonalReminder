@@ -65,6 +65,27 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.516" />
 
+        <Button
+            android:id="@+id/buttonPing"
+            android:layout_width="246dp"
+            android:layout_height="48dp"
+            android:background="@drawable/botonredondo"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:text="ingresa con ping "
+            android:backgroundTintMode="screen"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/blanco"
+            android:ems="10"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.714" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -16,11 +16,11 @@
         android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toTopOf="@+id/cambiopassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327"
-        app:srcCompat="@drawable/postercuatro" />
+        app:layout_constraintVertical_bias="0.343"
+        app:srcCompat="@drawable/fondologinuno" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
@@ -39,11 +39,11 @@
         android:id="@+id/TextEmail"
         android:layout_width="338dp"
         android:layout_height="48dp"
-        android:background="@drawable/paratexto"
+        android:background="@drawable/botonparaavanzar"
         android:backgroundTintMode="screen"
         android:drawableStart="@drawable/ic_baseline_mail"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/black"
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:hint="Correo Electrónico"
@@ -59,6 +59,7 @@
         android:textColorHint="@color/browser_actions_title_color"
         android:textIsSelectable="false"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
@@ -67,19 +68,16 @@
         app:layout_constraintVertical_bias="0.48" />
 
 
-
-
     <EditText
 
         android:id="@+id/TextPassword"
         android:layout_width="338dp"
         android:layout_height="48dp"
-        android:background="@drawable/paratexto"
-        android:backgroundTint="#000E0B0B"
-        android:backgroundTintMode="add"
+        android:background="@drawable/botonparaavanzar"
+        android:backgroundTintMode="screen"
         android:drawableStart="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/black"
         android:ems="10"
         android:fontFamily="sans-serif-light"
         android:hint="Contraseña"
@@ -92,12 +90,13 @@
         android:textColor="@color/black"
         android:textColorHint="@color/browser_actions_title_color"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.575" />
 
     <TextView
         android:id="@+id/cambiopassword"
@@ -106,7 +105,7 @@
         android:backgroundTint="@color/white"
         android:drawableTint="#0C0A0A"
         android:text="¿Olvidaste tu contraseña?"
-        android:textColor="@color/design_default_color_secondary"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,7 +120,7 @@
         android:layout_width="211dp"
         android:layout_height="26dp"
         android:text="¿Aún no tienes cuenta?"
-        android:textColor="@color/com_facebook_primary_button_text_color"
+        android:textColor="@color/design_default_color_secondary_variant"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -136,41 +135,26 @@
         android:layout_width="141dp"
         android:layout_height="27dp"
         android:text="Crea tu cuenta"
-        android:textColor="@color/design_default_color_secondary"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.934" />
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="201dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableBottom="@drawable/com_facebook_favicon_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <com.google.android.gms.common.SignInButton
         android:id="@+id/ButtonGoogle"
-        android:layout_width="208dp"
-        android:layout_height="36dp"
+        android:layout_width="221dp"
+        android:layout_height="38dp"
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
+        app:layout_constraintVertical_bias="0.823"
         tools:ignore="MissingConstraints">
 
     </com.google.android.gms.common.SignInButton>

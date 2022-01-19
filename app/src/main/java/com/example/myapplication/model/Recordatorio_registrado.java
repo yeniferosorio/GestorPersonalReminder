@@ -3,6 +3,8 @@ package com.example.myapplication.model;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Recordatorio_registrado implements Serializable {
     private String titulo;
@@ -22,6 +24,9 @@ public class Recordatorio_registrado implements Serializable {
     }
 
     public Recordatorio_registrado() {
+    }
+
+    public Recordatorio_registrado(String titulo, String descripcion, Time hora, Date fecha) {
     }
 
     public int getIcono() {
@@ -63,4 +68,35 @@ public class Recordatorio_registrado implements Serializable {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder=new StringBuilder();
+        stringBuilder.append("\nTitulo");
+        stringBuilder.append(titulo);
+
+        stringBuilder.append("\nDescripcion");
+        stringBuilder.append(titulo);
+
+        stringBuilder.append("\nHora");
+        stringBuilder.append(hora);
+
+        stringBuilder.append("\nFecha");
+        stringBuilder.append(fecha);
+
+        return stringBuilder.toString();
+
+    }
+    public Map<String,Object>toMap(){
+        HashMap<String,Object>result=new HashMap<>();
+        result.put("titulo",titulo);
+        result.put("descripcion",descripcion);
+        result.put("hora",hora);
+        result.put("fecha",fecha);
+
+        return result;
+    }
+
+
 }
+

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -16,9 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.model.Recordatorio_registrado;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,37 +31,50 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton guardar, volver;
     TextView fecha, hora;
 
-    private String descrip;
-    private String titulo;
-    private String dates;
-    private String hours;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     TimePickerDialog timePickerDialog;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore db;
+    FirebaseFirestore firebaseFirestore;
     Calendar calendar;
     int currentHour;
     int currentMinute;
     int year;
     int month;
     int day;
+
+    private String titul;
+    private String desc;
+    private String fech;
+    private String hor;
     DatePickerDialog.OnDateSetListener mDateSetListener;
+    private ArrayList<Recordatorio_registrado> lista_recordatorio;
+    ArrayAdapter<Recordatorio_registrado>arrayAdapterRecordatorio;
+    private static final String TAG = "Recordatorio";
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Recordatorio_registrado lista_recordatorio = (Recordatorio_registrado) getIntent().getSerializableExtra("listElement");
+
         titu = findViewById(R.id.editTexttitulo);
         des = findViewById(R.id.MultiLinedesc);
-
+        fecha = findViewById(R.id.txtEditFecha);
+        hora = findViewById(R.id.txtEditHora);
 
         guardar = findViewById(R.id.Buttonguardar);
         volver = findViewById(R.id.botonVolver);
-        hora = findViewById(R.id.txtEditHora);
-        fecha = findViewById(R.id.txtEditFecha);
+
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
         inicializarFirebase();
+        InicializarBd();
+
 
         volver.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, Opcion.class);
@@ -67,10 +84,6 @@ public class MainActivity extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                descrip = des.getText().toString();
-                titulo = titu.getText().toString();
-                dates = fecha.getText().toString();
-                hours = hora.getText().toString();
 
             }
         });
@@ -113,11 +126,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
+
+
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference();
+
 
     }
+
+    public void InicializarBd(){
+        databaseReference = firebaseDatabase.getReference();
+    }
+   
 
 }

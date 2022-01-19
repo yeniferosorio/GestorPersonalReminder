@@ -19,8 +19,7 @@ public class Opcion extends AppCompatActivity {
 
     Navigation_Midia navigation_Midia=new Navigation_Midia();
     Navigation_Tareas_Importantes navigation_Tareas_Importantes=new Navigation_Tareas_Importantes();
-    Navigation_Mis_tareas navigation_Mis_tareas=new Navigation_Mis_tareas();
-    Navigation_Misplanes navigation_Misplanes= new Navigation_Misplanes();
+
 
 
 
@@ -62,12 +61,7 @@ public class Opcion extends AppCompatActivity {
             case R.id.navigation_Tareas_Importantes:
                 loadFragment(navigation_Tareas_Importantes);
                 return true;
-            case R.id.navigation_Mis_tareas:
-                loadFragment(navigation_Mis_tareas);
-                return true;
-            case R.id.navigation_Misplanes:
-                loadFragment(navigation_Misplanes);
-                return true;
+
         }
         return false;
     };

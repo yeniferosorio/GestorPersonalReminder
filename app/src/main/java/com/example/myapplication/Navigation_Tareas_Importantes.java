@@ -18,10 +18,11 @@ import androidx.fragment.app.Fragment;
 import java.util.concurrent.Executor;
 
 public class Navigation_Tareas_Importantes extends Fragment {
- Button ingHuella;
+ Button ingHuella, buttonping;
  TextView mensaje;
  private Executor executor;
  private BiometricPrompt biometricPrompt;
+
  private androidx.biometric.BiometricPrompt.PromptInfo promptInfo;
 
 
@@ -52,9 +53,11 @@ public class Navigation_Tareas_Importantes extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ingHuella= view.findViewById(R.id.ButtonHuella);
+        buttonping= view.findViewById(R.id.buttonPing);
         mensaje= view.findViewById(R.id.textViewMensaje);
 
         executor= ContextCompat.getMainExecutor(getActivity());
+
         biometricPrompt=new BiometricPrompt(getActivity(), executor, new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
@@ -92,7 +95,18 @@ public class Navigation_Tareas_Importantes extends Fragment {
 
         ingHuella.setOnClickListener(v -> biometricPrompt.authenticate(promptInfo));
 
+        buttonping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),PingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        }
+
+
+
     }
 
 
-}
