@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.config.Util;
+import com.example.myapplication.model.UsuarioActualUtil;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -32,11 +33,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -103,12 +99,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         cambio_password.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RestPass.class));
-            finish();
+
         });
 
         crear_cuenta.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, CrearCuenta.class));
-            finish();
+            Intent intent=new Intent(LoginActivity.this, CrearCuenta.class);
+            startActivity(intent);
+
         });
 
         btn_inicio_sesion.setOnClickListener(v -> {
@@ -135,9 +132,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 Toast.makeText(LoginActivity.this, "" + user.getEmail(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(new Intent(LoginActivity.this, Opcion.class));
-                System.out.println("=========================================================================");
-                data();
-                System.out.println("=========================================================================");
+                UsuarioActualUtil.actualUserMail = user.getEmail();
                 startActivity(i);
                 finish();
             } else {
@@ -200,7 +195,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                     try {
                         System.out.println(firebaseAuth.getCurrentUser().getEmail());
-                        Util.setProperty("user.mail", firebaseAuth.getCurrentUser().getEmail(), getApplicationContext());
+
+                            Util.setProperty("user.mail", firebaseAuth.getCurrentUser().getEmail(), getApplicationContext());
+
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -230,32 +228,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     }
 
-    public void data() {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference userRef = db.collection("usuarios");
-        Query query = userRef.whereEqualTo("nombre", "Marcelo");
 
-        query.get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                System.out.println("----------------------------------------------------------------------------------");
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                System.out.println("----------------------------------------------------------------------------------");
-                            }
-                        } else {
-                            System.out.println("----------------------------------------------------------------------------------");
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                            System.out.println("----------------------------------------------------------------------------------");
-                        }
-                    }
-                });
 
-    }
-    private void usuarioActual(){
-
-    }
 
 }

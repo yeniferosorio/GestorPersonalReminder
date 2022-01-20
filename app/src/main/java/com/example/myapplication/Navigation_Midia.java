@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.model.Recordatorio_registrado;
+import com.example.myapplication.model.UsuarioActualUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -57,7 +58,9 @@ public class Navigation_Midia extends Fragment implements AdaptadorRec.OnNoteLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        System.out.println("=============================================================");
+        System.out.println(UsuarioActualUtil.actualUserMail);
+        System.out.println("=============================================================");
         return inflater.inflate(R.layout.fragment_navigation__midia, container, false);
     }
 

@@ -10,21 +10,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.model.UsuarioActualUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 
 public class CrearCuenta extends AppCompatActivity {
@@ -60,41 +59,36 @@ public class CrearCuenta extends AppCompatActivity {
         dr = FirebaseDatabase.getInstance().getReference();
         db = FirebaseFirestore.getInstance();
 
-        registrobdfirebase();
+
         crear_cuenta.setOnClickListener(v -> {
             nombre = edit_nombre.getText().toString();
             telefono = edit_telefono.getText().toString();
             correo = edit_correo_Electronico.getText().toString();
             password = edit_contrasenia.getText().toString();
-            if (!nombre.isEmpty() && !telefono.isEmpty() && !correo.isEmpty() && !password.isEmpty()) {
-                if (password.length() >= 6) {
+            if (!nombre.isEmpty() && !telefono.isEmpty() && !correo.isEmpty() && !password.isEmpty() && password.length() >= 6) {
+                UsuarioActualUtil uau = new UsuarioActualUtil();
 
-                    Clean();
-                }
-                firebaseAuth.createUserWithEmailAndPassword(correo,  password ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+                firebaseAuth.createUserWithEmailAndPassword(correo, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Map<String, Object> map = new HashMap<>();
-                            map.put("nombre", nombre);
-                            map.put("telefono", telefono);
-                            map.put("correo Electronico", correo);
-                            map.put("contraseña", encriptarPassword(password));
-
-                            String id = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-                            dr.child("Usuario").child(id).setValue(map).addOnCompleteListener(task2 -> {
-                                if (task2.isSuccessful()) {
-                                    Toast.makeText(CrearCuenta.this, "Usuario Creado Correctamente", Toast.LENGTH_SHORT).show();
-                                    Clean();
-                                } else {
-                                    Toast.makeText(CrearCuenta.this, "Error en la creación de tus datos intenta nuevamente", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        } else {
-                            Toast.makeText(CrearCuenta.this, "Datos ya ocupados o no estan registrados por su correo Electronico correspondiente", Toast.LENGTH_SHORT).show();
+                            dr.child("usuarios").push().setValue(registrobdfirebase());
+                            Toast.makeText(CrearCuenta.this, "Usuario Creado Correctamente", Toast.LENGTH_SHORT).show();
+                            Clean();
+                            finish();
                         }
                     }
+
+
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(CrearCuenta.this, "Ya existe una cuenta para el correo electrónico ingresado, pruebe con otro correo", Toast.LENGTH_SHORT).show();
+                    }
                 });
+
+
             }
         });
         iniciar_sesion.setOnClickListener(v -> startActivity(new Intent(CrearCuenta.this, LoginActivity.class)));
@@ -104,21 +98,19 @@ public class CrearCuenta extends AppCompatActivity {
 
 
     //registros en bd firebase
-    private void registrobdfirebase() {
+    private Map registrobdfirebase() {
         String nombre = edit_nombre.getText().toString();
         String telefono = edit_telefono.getText().toString();
         String correo = edit_correo_Electronico.getText().toString();
-        String password = edit_contrasenia.getText().toString();
 
         Map<String, Object> user = new HashMap<>();
         user.put("nombre", nombre);
         user.put("telefono", telefono);
-        user.put("correo ", correo);
-        user.put("password", encriptarPassword(password));
+        user.put("correo", correo);
+
         db.collection("usuarios").document().set(user);
 
-
-
+        return user;
 
 
     }
@@ -151,7 +143,6 @@ public class CrearCuenta extends AppCompatActivity {
         edit_telefono.setText("");
         edit_correo_Electronico.setText("");
         edit_contrasenia.setText("");
-
     }
 
 }
