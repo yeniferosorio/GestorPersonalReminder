@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.model.UsuarioActualUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -66,7 +65,6 @@ public class CrearCuenta extends AppCompatActivity {
             correo = edit_correo_Electronico.getText().toString();
             password = edit_contrasenia.getText().toString();
             if (!nombre.isEmpty() && !telefono.isEmpty() && !correo.isEmpty() && !password.isEmpty() && password.length() >= 6) {
-                UsuarioActualUtil uau = new UsuarioActualUtil();
 
 
                 firebaseAuth.createUserWithEmailAndPassword(correo, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -108,7 +106,7 @@ public class CrearCuenta extends AppCompatActivity {
         user.put("telefono", telefono);
         user.put("correo", correo);
 
-        db.collection("usuarios").document().set(user);
+        db.collection("usuarios").document(firebaseAuth.getCurrentUser().getUid()).set(user);
 
         return user;
 

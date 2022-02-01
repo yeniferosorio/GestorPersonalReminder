@@ -13,8 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.config.Util;
-import com.example.myapplication.model.UsuarioActualUtil;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -35,8 +33,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
 
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -132,7 +128,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 Toast.makeText(LoginActivity.this, "" + user.getEmail(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(new Intent(LoginActivity.this, Opcion.class));
-                UsuarioActualUtil.actualUserMail = user.getEmail();
                 startActivity(i);
                 finish();
             } else {
@@ -141,7 +136,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
     }
 
-    //google
     @Override
     protected void onStart() {
         super.onStart();
@@ -155,12 +149,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void updateUI(FirebaseUser user) {
-
-    }
-
-    private void goMainScreen() {
-        Intent intent = new Intent(LoginActivity.this, Opcion.class);
-        startActivity(intent);
 
     }
 
@@ -192,17 +180,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 if (task.isSuccessful()) {
                     Log.d(TAG, "signInWithCredential:success");
                     FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                    try {
-                        System.out.println(firebaseAuth.getCurrentUser().getEmail());
-
-                            Util.setProperty("user.mail", firebaseAuth.getCurrentUser().getEmail(), getApplicationContext());
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
                     Intent i = new Intent(new Intent(LoginActivity.this, Opcion.class));
                     startActivity(i);
                     finish();
