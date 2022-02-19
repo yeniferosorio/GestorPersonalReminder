@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -53,7 +54,7 @@ public class ActivityNewReminder extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_reminder);
         inicializarFirebase();
         //esta es la referencia del documento(id) del usuario
         String userId = firebaseAuth.getCurrentUser().getUid();
@@ -63,12 +64,14 @@ public class ActivityNewReminder extends AppCompatActivity {
         fecha = findViewById(R.id.txtEditFecha);
         hora = findViewById(R.id.txtEditHora);
         guardar = findViewById(R.id.Buttonguardar);
-        volver = findViewById(R.id.botonVolver);
+        volver = findViewById(R.id.buttonVolver);
 
 
 
 
         volver.setOnClickListener(v -> {
+            Intent i = new Intent(ActivityNewReminder.this, Navigation_Midia.class);
+            startActivity(i);
             finish();
         });
 
@@ -83,6 +86,8 @@ public class ActivityNewReminder extends AppCompatActivity {
                 recordatorio.put("fecha", fecha.getText().toString());
                 recordatorio.put("hora", hora.getText().toString());
                 userReference.collection("recordatorio").document().set(recordatorio);
+                Intent i = new Intent(ActivityNewReminder.this, Navigation_Midia.class);
+                startActivity(i);
                 finish();
 
 

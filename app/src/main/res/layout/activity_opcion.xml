@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:scrollbarThumbHorizontal="?attr/homeAsUpIndicator"
-    tools:context=".Opcion">
+    tools:context=".FragmentActivity">
 
     <FrameLayout
         android:id="@+id/frame_conteiner"

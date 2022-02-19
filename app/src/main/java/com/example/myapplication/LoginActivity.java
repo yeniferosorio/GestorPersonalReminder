@@ -13,9 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -48,8 +45,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
-    private AccessTokenTracker accessTokenTracker;
-    private CallbackManager callbackManager;
     private static final String TAG = "GoogleActivity";
 
 
@@ -84,14 +79,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 }
             }
         };
-        accessTokenTracker = new AccessTokenTracker() {
-            @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                if (currentAccessToken == null) {
-                    firebaseAuth.signOut();
-                }
-            }
-        };
+
 
         cambio_password.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RestPass.class));
@@ -127,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             if (task.isSuccessful()) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 Toast.makeText(LoginActivity.this, "" + user.getEmail(), Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(new Intent(LoginActivity.this, Opcion.class));
+                Intent i = new Intent(new Intent(LoginActivity.this, FragmentActivity.class));
                 startActivity(i);
                 finish();
             } else {
@@ -180,7 +168,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 if (task.isSuccessful()) {
                     Log.d(TAG, "signInWithCredential:success");
                     FirebaseUser user = firebaseAuth.getCurrentUser();
-                    Intent i = new Intent(new Intent(LoginActivity.this, Opcion.class));
+                    Intent i = new Intent(new Intent(LoginActivity.this, FragmentActivity.class));
                     startActivity(i);
                     finish();
                     updateUI(user);

@@ -30,12 +30,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Navigation_Midia extends Fragment {
+public class Navigation_Midia extends Fragment{
     private RecyclerView recycler;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseFirestore firebaseFirestore;
     private ArrayList<Recordatorio> recordatorios;
+
+
 
     private static final String TAG = "EventChild";
     private DatabaseReference mDatabase; //declaracion de databasereference para la listar en fb
@@ -54,13 +56,16 @@ public class Navigation_Midia extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         inicializarFirebase();
+
         recordatorios = new ArrayList<>();
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
 
         return inflater.inflate(R.layout.fragment_navigation__midia, container, false);
     }
@@ -71,19 +76,19 @@ public class Navigation_Midia extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        recycler = view.findViewById(R.id.recyclerView);
         dbFirebase(mDatabase);
 
-        recycler = view.findViewById(R.id.recyclerView);
+
         recycler.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recycler.setHasFixedSize(true);
 
-        recycler = view.findViewById(R.id.recyclerView);
-        recycler.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        recycler.setHasFixedSize(true);
+
+
+
+
 
         DocumentReference userReference = firebaseFirestore.collection("usuarios").document(firebaseAuth.getCurrentUser().getUid());
-        System.out.println(firebaseAuth.getCurrentUser().getUid());
         userReference.collection("recordatorio").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -105,15 +110,32 @@ public class Navigation_Midia extends Fragment {
                     AdaptadorRec adapter = new AdaptadorRec(recordatorios, getActivity(), new AdaptadorRec.OnNoteListener() {
                         @Override
                         public void onNoteClick(Recordatorio item) {
-                            System.out.println(item.getId());
+
+                            //ABRIR EL ACTIVITY Y PASARLE CON PUT EXTRA EL item
+
+                            Intent i = new Intent(getActivity() , EditarRecordatorioActivity.class);
+                            String[] data = new String[5];
+                            data[0] = item.getId();
+                            data[1] = item.getTitulo();
+                            data[2] = item.getDescripcion();
+                            data[3] = item.getFecha();
+                            data[4] = item.getHora();
+
+                            i.putExtra("item",data);
+                            startActivity(i);
+                            getActivity().finish();
+
                         }
                     });
+
                     recycler.setAdapter(adapter);
+
                 } else {
                     System.out.println("--------------------------------");
                     System.out.println("Lista de recordatorios vacia");
                     System.out.println("--------------------------------");
                 }
+
             }
         });
 
@@ -145,6 +167,7 @@ public class Navigation_Midia extends Fragment {
         intent.putExtra("listElement", item);
         startActivity(intent);
     }
+
 
 
 }
