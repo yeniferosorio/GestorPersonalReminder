@@ -87,6 +87,9 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
                 userReference.collection("recordatorio").document(r[0]).update(recordatorio);
                 Intent i = new Intent(EditarRecordatorioActivity.this, FragmentActivity.class);
                 startActivity(i);
+
+
+
                 finish();
             }
         });
