@@ -11,10 +11,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondocarddos">
+        android:background="@drawable/fondocarduno">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/Buttonguardar"
+            android:id="@+id/buttonguardar"
             android:layout_width="58dp"
             android:layout_height="54dp"
             android:layout_marginEnd="28dp"
@@ -25,7 +25,7 @@
             app:layout_constraintHorizontal_bias="0.972"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.893"
+            app:layout_constraintVertical_bias="0.94"
             app:srcCompat="@android:drawable/ic_menu_save"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -37,10 +37,10 @@
             app:backgroundTint="@android:color/holo_green_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintHorizontal_bias="0.084"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.896"
+            app:layout_constraintVertical_bias="0.943"
             app:srcCompat="?attr/actionModeCloseDrawable"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -60,15 +60,15 @@
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.243" />
+            app:layout_constraintVertical_bias="0.183" />
 
         <EditText
             android:id="@+id/MultiLinedesc"
-            android:layout_width="331dp"
-            android:layout_height="189dp"
+            android:layout_width="330dp"
+            android:layout_height="186dp"
             android:background="#8c000000"
             android:ems="10"
             android:gravity="start|top"
@@ -84,7 +84,7 @@
             app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.431" />
+            app:layout_constraintVertical_bias="0.356" />
 
         <TextView
             android:id="@+id/txtEditFecha"
@@ -100,7 +100,7 @@
             app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.645" />
+            app:layout_constraintVertical_bias="0.595" />
 
         <TextView
             android:id="@+id/txtEditHora"
@@ -116,7 +116,7 @@
             app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.743" />
+            app:layout_constraintVertical_bias="0.701" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -126,10 +126,10 @@
             android:backgroundTint="#D1A8D8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.643"
+            app:layout_constraintVertical_bias="0.594"
             app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
 
         <ImageView
@@ -140,11 +140,25 @@
             android:backgroundTint="#D1A8D8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintHorizontal_bias="0.102"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.742"
+            app:layout_constraintVertical_bias="0.701"
             app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+        <ImageButton
+            android:id="@+id/notificacion"
+            android:layout_width="51dp"
+            android:layout_height="38dp"
+            android:background="#8c000000"
+            android:backgroundTint="#D1A8D8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.827"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.705"
+            app:srcCompat="@drawable/ic_baseline_notifications_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

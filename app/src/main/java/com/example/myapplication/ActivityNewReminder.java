@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -33,6 +34,7 @@ public class ActivityNewReminder extends AppCompatActivity {
     EditText descripcion, titulo;
     FloatingActionButton guardar, volver;
     TextView fecha, hora;
+    ImageView notify;
 
 
     private FirebaseDatabase firebaseDatabase;
@@ -63,8 +65,9 @@ public class ActivityNewReminder extends AppCompatActivity {
         descripcion = findViewById(R.id.MultiLinedesc);
         fecha = findViewById(R.id.txtEditFecha);
         hora = findViewById(R.id.txtEditHora);
-        guardar = findViewById(R.id.Buttonguardar);
+        guardar = findViewById(R.id.buttonguardar);
         volver = findViewById(R.id.buttonVolver);
+        notify= findViewById(R.id.notificacion);
 
 
 

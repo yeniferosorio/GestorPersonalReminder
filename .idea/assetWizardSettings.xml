@@ -91,8 +91,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\sofia\Downloads\Personal Reminder.png" />
-                                                <entry key="scalingPercent" value="162" />
+                                                <entry key="imagePath" value="C:\Users\sofia\Desktop\logoBlanco.png" />
+                                                <entry key="scalingPercent" value="58" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -318,7 +318,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/delete/baseline_delete_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/notifications/baseline_notifications_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -328,7 +328,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="delete" />
+                            <entry key="outputName" value="ic_baseline_notifications_24" />
                             <entry key="sourceFile" value="C:\Users\sofia\AndroidStudioProjects\GestorPersonalReminder" />
                           </map>
                         </option>

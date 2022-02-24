@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/navigation_Tareas_Importantes"
-        android:icon="@drawable/ic_baseline_star_24"
+        android:icon="@drawable/ic_baseline_star_border_24"
         android:title="Importante" />
 
 

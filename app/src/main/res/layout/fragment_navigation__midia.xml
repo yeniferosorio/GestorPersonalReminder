@@ -12,40 +12,62 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonSpeak"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|bottom"
+            android:background="#FDFAFA"
+            android:backgroundTint="@color/purpuraclaro"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_baseline_mic_24"
+            app:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.715"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97"
+            app:rippleColor="#FBF8F8"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/botonAñadir"
             android:layout_width="57dp"
             android:layout_height="56dp"
             android:layout_gravity="end|bottom"
-            android:backgroundTint="@color/rojoopaco"
+            android:backgroundTint="@color/purpuraclaro"
             android:contentDescription="TODO"
-            android:src="@drawable/ic_baseline_add_24"
+            android:src="@drawable/ic_baseline_playlist_add_24"
             app:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintHorizontal_bias="0.915"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.991"
+            app:layout_constraintVertical_bias="0.97"
             tools:ignore="SpeakableTextPresentCheck">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="409dp"
-            android:layout_height="559dp"
+            android:layout_width="393dp"
+            android:layout_height="619dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.558" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
-            android:layout_width="246dp"
-            android:layout_height="34dp"
+            android:layout_width="276dp"
+            android:layout_height="24dp"
             android:background="@drawable/paratexto"
             android:completionHint="Buscar"
+            android:drawableEnd="@android:drawable/ic_menu_search"
             android:hint="Buscar"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
@@ -54,23 +76,11 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintHorizontal_bias="0.118"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
+            app:layout_constraintVertical_bias="0.008"
             tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.606"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.02" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

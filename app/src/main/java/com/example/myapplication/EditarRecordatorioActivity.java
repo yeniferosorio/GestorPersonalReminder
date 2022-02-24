@@ -63,7 +63,7 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
         editdescripcion = findViewById(R.id.EditDescripcion);
         fecha = findViewById(R.id.txtEditFecha);
         hora = findViewById(R.id.txtEditHora);
-        buttonguardar = findViewById(R.id.Buttonguardar);
+        buttonguardar = findViewById(R.id.buttonguardar);
         buttonvolver = findViewById(R.id.buttonVolver);
         buttonEliminar = findViewById(R.id.ButtonEliminar);
 
