@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -23,6 +26,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.myapplication.model.NotificationID;
+import com.example.myapplication.model.OnReminderReceiver;
 import com.example.myapplication.model.Recordatorio;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -35,6 +40,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -60,8 +66,8 @@ public class ActivityNewReminder extends AppCompatActivity {
     int month;
     int day;
 
-    String channelID = "channelID";
-    String channelName = "channelName";
+
+
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private ArrayList<Recordatorio> lista_recordatorio;
@@ -103,55 +109,44 @@ public class ActivityNewReminder extends AppCompatActivity {
                 recordatorio.put("hora", hora.getText().toString());
                 userReference.collection("recordatorio").document().set(recordatorio);
 
+                String time = fecha.getText().toString().replace("/"," ") + " " + hora.getText().toString().replace(":"," "); // Results in "2-5-2012 20:43"
+                String[] splittedTime = time.split(" ");
 
-                String toParse = fecha.getText().toString().replace('/', '-') + " " + hora.getText().toString(); // Results in "2-5-2012 20:43"
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm");
-                Date date = null;
-                try {
-                    date = formatter.parse(toParse);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                Calendar calendar = Calendar.getInstance();
 
-                long horaNotificacion = date.getTime();
+                calendar.set(Integer.valueOf(splittedTime[2]),(Integer.valueOf(splittedTime[1])-1),Integer.valueOf(splittedTime[0]),Integer.valueOf(splittedTime[3]),Integer.valueOf(splittedTime[4]),00);
 
                 createNotificationChannel();
+                crearNotificacion(calendar, titulo.getText().toString(), descripcion.getText().toString());
 
-                crearNotificacion(horaNotificacion, titulo.getText().toString(), descripcion.getText().toString(), getApplicationContext());
+
                 Intent i = new Intent(ActivityNewReminder.this, FragmentActivity.class);
                 startActivity(i);
                 finish();
 
-
             }
 
-            private void crearNotificacion(long notificationTime, String textTitle, String textContent, Context applicationContext) {
+            private void crearNotificacion(Calendar calendar, String textTitle, String textContent) {
 
-                NotificationCompat.Builder notification = new NotificationCompat.Builder(applicationContext,channelID);
-                notification.setSmallIcon(R.drawable.ic_notifications_black_24dp);
-                notification.setTicker("New Personal Reminder notification");
-                notification.setWhen(notificationTime);
-                notification.setContentTitle(textTitle);
-                notification.setContentText(textContent);
+                Intent intent = new Intent(getApplicationContext(), OnReminderReceiver.class);
+                intent.putExtra("title",textTitle);
+                intent.putExtra("content",textContent);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),NotificationID.getID(),intent,0);
 
-                Intent intent = new Intent(getApplicationContext(), FragmentActivity.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-                notification.setContentIntent(pendingIntent);
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP,
+                        calendar.getTimeInMillis(),
+                        pendingIntent);
 
-                // notificationId is a unique int for each notification that you must define
-                notificationManager.notify(0, notification.build());
 
 
             }
             private void createNotificationChannel() {
-                // Create the NotificationChannel, but only on API 26+ because
-                // the NotificationChannel class is new and not in the support library
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    String name = channelName;
+                    String name = String.valueOf(NotificationID.getActualID());
                     int importance = NotificationManager.IMPORTANCE_DEFAULT;
-                    NotificationChannel channel = new NotificationChannel(channelID, name, importance);
+                    NotificationChannel channel = new NotificationChannel(String.valueOf(NotificationID.getActualID()), name, importance);
                     NotificationManager notificationManager = getSystemService(NotificationManager.class);
                     notificationManager.createNotificationChannel(channel);
                 }
@@ -193,7 +188,7 @@ public class ActivityNewReminder extends AppCompatActivity {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
         });
-        mDateSetListener = (view, year, month, dayOfMonth) -> fecha.setText(dayOfMonth + "/" + month + "/" + year);
+        mDateSetListener = (view, year, month, dayOfMonth) -> fecha.setText(dayOfMonth + "/" + (month+1) + "/" + year);
 
     }
 
