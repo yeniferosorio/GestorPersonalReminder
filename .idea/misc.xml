@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marce/AndroidStudioProjects/GestorPersonalReminder/app/src/main/res/layout/activity_login.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/GestorPersonalReminder/app/src/main/res/layout/activity_new_reminder.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/GestorPersonalReminder/app/src/main/res/layout/activity_splash.xml" value="0.16875" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/GestorPersonalReminder/app/src/main/res/layout/fragment_navigation__midia.xml" value="0.19157608695652173" />
         <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/drawable/botonparaavanzar.xml" value="0.1" />
         <entry key="..\:/Users/sofia/Desktop/GestorPersonalReminder/GestorPersonalReminder/app/src/main/res/drawable/botonredondo.xml" value="0.4036458333333333" />

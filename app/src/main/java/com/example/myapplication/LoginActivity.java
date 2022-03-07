@@ -2,10 +2,13 @@
 package com.example.myapplication;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     SignInButton buttonGoogle;
     TextView cambio_password, crear_cuenta;
     EditText Text_Email, Text_Password;
+    CheckBox isRemindingUser;
     private String correo, contrasenia;
 
     private static final int RC_SIGN_IN = 100;
@@ -46,27 +50,25 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private static final String TAG = "GoogleActivity";
-
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        firebaseAuth = FirebaseAuth.getInstance();
+        sharedPreferences = getSharedPreferences("accountPersistence",
+                Context.MODE_PRIVATE);
+        isRemindingUser = findViewById(R.id.chkRemindUser);
 
         Text_Email = findViewById(R.id.TextEmail);
         Text_Password = findViewById(R.id.TextPassword);
         cambio_password = findViewById(R.id.cambiopassword);
         crear_cuenta = findViewById(R.id.textcrearCuenta);
         btn_inicio_sesion = findViewById(R.id.btnIniciarSesion);
-
         buttonGoogle = findViewById(R.id.ButtonGoogle);
-
-        firebaseAuth = FirebaseAuth.getInstance();
-
-        //Inicio de sesion con google//
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_clients_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
-        //goMainScreen();
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -80,14 +82,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-
         cambio_password.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RestPass.class));
 
         });
 
         crear_cuenta.setOnClickListener(v -> {
-            Intent intent=new Intent(LoginActivity.this, CrearCuenta.class);
+            Intent intent = new Intent(LoginActivity.this, CrearCuenta.class);
             startActivity(intent);
 
         });
@@ -108,11 +109,27 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     }
 
+    private void saveUserState(String email, String pass, String keep) {
+
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("emailKey", email);
+        editor.putString("passKey", pass);
+        editor.putString("keepSessionKey", keep);
+        editor.commit();
+    }
+
 
     //login con firebase con correo y contraseña
     private void loginUsuario() {
+
         firebaseAuth.signInWithEmailAndPassword(correo, contrasenia).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                if (isRemindingUser.isChecked()) {
+                    saveUserState(correo, contrasenia, String.valueOf(true));
+                } else {
+                    saveUserState("", "", String.valueOf(false));
+                }
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 Toast.makeText(LoginActivity.this, "" + user.getEmail(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(new Intent(LoginActivity.this, FragmentActivity.class));
@@ -122,6 +139,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 Toast.makeText(LoginActivity.this, "Datos incorrectos ingrese nuevamente", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override
@@ -192,8 +210,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void onConnectionFailed(@NonNull @NotNull ConnectionResult connectionResult) {
 
     }
-
-
 
 
 }

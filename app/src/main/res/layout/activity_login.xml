@@ -159,5 +159,17 @@
 
     </com.google.android.gms.common.SignInButton>
 
+    <CheckBox
+        android:id="@+id/chkRemindUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recordar usuario?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
