@@ -1,11 +1,16 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,10 +37,13 @@ import java.util.List;
 
 public class Navigation_Midia extends Fragment{
     private RecyclerView recycler;
+    TextView cerrarSesion;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseFirestore firebaseFirestore;
     private ArrayList<Recordatorio> recordatorios;
+    private SharedPreferences sharedPreferences;
+
 
 
 
@@ -54,6 +62,9 @@ public class Navigation_Midia extends Fragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        sharedPreferences = getActivity().getSharedPreferences("accountPersistence",
+                Context.MODE_PRIVATE);
 
         inicializarFirebase();
 
@@ -77,11 +88,41 @@ public class Navigation_Midia extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         recycler = view.findViewById(R.id.recyclerView);
+        cerrarSesion=view.findViewById(R.id.buttonCerrarSesion);
         dbFirebase(mDatabase);
 
 
         recycler.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recycler.setHasFixedSize(true);
+
+        cerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
+                builder.setMessage("¿Desea cerrar Sesión?");
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("emailKey", "");
+                        editor.putString("passKey", "");
+                        editor.putString("keepSessionKey", "false");
+                        editor.commit();
+                        Intent intent= new Intent(getActivity(),LoginActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.show();
+            }
+        });
 
 
 

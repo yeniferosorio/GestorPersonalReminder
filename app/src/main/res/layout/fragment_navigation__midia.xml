@@ -64,8 +64,8 @@
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
-            android:layout_width="276dp"
-            android:layout_height="24dp"
+            android:layout_width="171dp"
+            android:layout_height="23dp"
             android:background="@drawable/paratexto"
             android:completionHint="Buscar"
             android:drawableEnd="@android:drawable/ic_menu_search"
@@ -77,11 +77,26 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.012"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.008"
+            app:layout_constraintVertical_bias="0.022"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/buttonCerrarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_waving_hand_24"
+            android:drawableTint="@color/rojoopaco"
+            android:text="  Cerrar Sesión"
+            android:textColor="@color/com_facebook_likeboxcountview_text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.945"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.021" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

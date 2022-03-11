@@ -117,6 +117,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         editor.putString("passKey", pass);
         editor.putString("keepSessionKey", keep);
         editor.commit();
+
     }
 
 
