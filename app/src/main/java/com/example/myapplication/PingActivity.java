@@ -21,8 +21,8 @@ public class PingActivity extends AppCompatActivity {
             @Override
             public void onDataEntered(Pinview pinview, boolean fromUser) {
                 Toast.makeText(PingActivity.this, ""+pinview.getValue(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(PingActivity.this, Importante.class);
-                startActivity(intent);
+               // Intent intent = new Intent(PingActivity.this, Importante.class);
+               // startActivity(intent);
             }
         });
     }

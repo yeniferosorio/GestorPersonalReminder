@@ -110,7 +110,6 @@ public class CrearCuenta extends AppCompatActivity {
 
         return user;
 
-
     }
 
     //encriptacion de password en firebase

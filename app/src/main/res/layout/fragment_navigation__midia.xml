@@ -23,10 +23,31 @@
             app:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.746"
+            app:layout_constraintHorizontal_bias="0.954"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.895"
+            app:layout_constraintVertical_bias="0.647"
+            app:rippleColor="#FBF8F8"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonCerrarSesion"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|bottom"
+            android:background="#FDFAFA"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_baseline_home_24"
+            app:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.86"
             app:rippleColor="#FBF8F8"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck">
 
@@ -34,8 +55,8 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/botonAñadir"
-            android:layout_width="65dp"
-            android:layout_height="57dp"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
             android:layout_gravity="end|bottom"
             android:backgroundTint="@color/purpuraclaro"
             android:contentDescription="TODO"
@@ -46,7 +67,7 @@
             app:layout_constraintHorizontal_bias="0.957"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.895"
+            app:layout_constraintVertical_bias="0.756"
             tools:ignore="SpeakableTextPresentCheck">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
@@ -57,48 +78,31 @@
             android:layout_height="577dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.441" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/action_search"
+            android:layout_width="411dp"
+            android:layout_height="38dp"
+            android:background="@color/purpuraclaro"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="12dp"
+            android:hint="Buscar"
+            android:inputType="textAutoComplete"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.341" />
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="171dp"
-            android:layout_height="23dp"
-            android:background="@drawable/paratexto"
-            android:completionHint="Buscar"
-            android:drawableEnd="@android:drawable/ic_menu_search"
-            android:hint="Buscar"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:textColor="@android:color/darker_gray"
-            android:textColorHint="@android:color/darker_gray"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.012"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <TextView
-            android:id="@+id/buttonCerrarSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_waving_hand_24"
-            android:drawableTint="@color/rojoopaco"
-            android:text="  Cerrar Sesión"
-            android:textColor="@color/com_facebook_likeboxcountview_text_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.945"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.021" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>

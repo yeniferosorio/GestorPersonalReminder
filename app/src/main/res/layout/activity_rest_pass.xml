@@ -11,47 +11,47 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="421dp"
-        android:layout_height="300dp"
+        android:layout_width="571dp"
+        android:layout_height="1224dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/passconletrablanca" />
+        app:layout_constraintVertical_bias="0.427"
+        app:srcCompat="@drawable/restpass" />
 
     <Button
         android:id="@+id/buttonRestablecer"
-        android:layout_width="338dp"
+        android:layout_width="242dp"
         android:layout_height="46dp"
         android:background="@drawable/botonredondo"
+        android:fontFamily="@font/acme"
         android:text="Restablecer Contraseña"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintVertical_bias="0.572" />
 
     <EditText
         android:id="@+id/TextEditarCorreo"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@drawable/paratexto"
+        android:background="@drawable/botonparaavanzar"
         android:backgroundTintMode="screen"
         android:drawableStart="@drawable/ic_baseline_mail"
         android:drawablePadding="12dp"
         android:drawableTint="#B8B3B3"
         android:ems="10"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/aref_ruqaa"
         android:hint="Correo Electrónico"
         android:inputType="textEmailAddress"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
+        android:textColor="@color/browser_actions_title_color"
         android:textColorHint="@color/browser_actions_title_color"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,22 +59,39 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.456" />
 
     <TextView
         android:id="@+id/TxtVolveralogin"
         android:layout_width="245dp"
         android:layout_height="28dp"
+        android:fontFamily="@font/aref_ruqaa"
         android:text="Vuelve e ingresa a tu cuenta"
         android:textAlignment="center"
-        android:textColor="@color/teal_200"
-        android:textStyle="bold|italic"
+        android:textColor="@color/purpura"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.704" />
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="264dp"
+        android:layout_height="64dp"
+        android:fontFamily="@font/aref_ruqaa"
+        android:text="Restablece tu Contraseña"
+        android:textAlignment="center"
+        android:textColor="@color/browser_actions_title_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

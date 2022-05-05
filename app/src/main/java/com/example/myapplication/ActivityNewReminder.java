@@ -104,6 +104,7 @@ public class ActivityNewReminder extends AppCompatActivity {
 
                 Map<String, Object> recordatorio = new HashMap<>();
                 recordatorio.put("titulo", titulo.getText().toString());
+                recordatorio.put("search", titulo.getText().toString().toLowerCase());
                 recordatorio.put("descripcion", descripcion.getText().toString());
                 recordatorio.put("fecha", fecha.getText().toString());
                 recordatorio.put("hora", hora.getText().toString());

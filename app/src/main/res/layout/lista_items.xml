@@ -13,109 +13,100 @@
 
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="203dp"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        card_view:cardCornerRadius="20dp">
 
-        card_view:cardCornerRadius="6dp">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="194dp"
+               android:src="@drawable/puente"
+               android:scaleType="centerCrop" />
 
 
-        <ImageView
-            android:layout_width="403dp"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/fondocardtres" />
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="#FBF6F6"
+               android:orientation="vertical"
+               android:padding="16dp">
 
-        <TextView
-            android:id="@+id/id_hora"
-            android:layout_width="81dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/appbar_padding"
-            android:background="#8c000000"
-            android:hint="Hora"
-            android:textAlignment="textStart"
-            android:textColor="#ffe3e3e3"
-            android:textColorHint="@android:color/background_light"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.02"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.894"
-            tools:ignore="RtlCompat" />
 
-        <TextView
-            android:id="@+id/id_fecha"
-            android:layout_width="89dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_vertical"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:background="#8c000000"
-            android:hint="Fecha"
-            android:textAlignment="textStart"
-            android:textColor="#ffe3e3e3"
-            android:textColorHint="@android:color/background_light"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.759"
-            tools:ignore="RtlCompat" />
+               <TextView
+                   android:id="@+id/id_titulo"
+                   android:layout_width="77dp"
+                   android:layout_height="30dp"
+                   android:fontFamily="@font/aref_ruqaa"
+                   android:hint="Titulo"
+                   android:tag="Titulo"
+                   android:paddingStart="12dp"
+                   android:paddingEnd="12dp"
+                   android:layout_marginTop="10dp"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                   android:textColor="@color/black"
+                   android:textColorHint="@color/black"/>
 
-        <TextView
-            android:id="@+id/id_titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:background="#8c000000"
-            android:hint="Titulo"
-            android:padding="10dp"
-            android:textColor="#ffe3e3e3"
-            android:textColorHint="@color/blanco"
-            android:textSize="16sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.116"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.112" />
+               <TextView
+                   android:id="@+id/id_descripcion"
+                   android:layout_width="275dp"
+                   android:layout_height="61dp"
+                   android:layout_below="@+id/id_titulo"
+                   android:layout_marginTop="10dp"
+                   android:fontFamily="@font/aref_ruqaa"
+                   android:hint="Descripción"
+                   android:paddingStart="12dp"
+                   android:paddingEnd="12dp"
+                   android:textAppearance="?attr/textAppearanceBody2"
+                   android:textColor="@color/black"
+                   android:textColorHint="@color/black"
+                   android:textSize="14sp"
+                   android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/id_descripcion"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:background="#8c000000"
-            android:foregroundGravity="center_horizontal"
-            android:gravity="left"
-            android:hint="Descripción"
-            android:padding="10dp"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="10dp"
-            android:textColor="#ffe3e3e3"
-            android:textColorHint="@color/blanco"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.116"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.112" />
+               <TextView
+                   android:id="@+id/id_fecha"
+                   android:layout_width="87dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/id_descripcion"
 
+                   android:layout_gravity="bottom|center_vertical"
+                   android:drawablePadding="12dp"
+                   android:fontFamily="@font/aref_ruqaa"
+                   android:hint="Fecha"
+                   android:paddingStart="12dp"
+                   android:paddingEnd="12dp"
+                   android:textAlignment="textStart"
+                   android:textColor="@color/black"
+                   android:textColorHint="@color/black"
+                   android:textSize="14sp"
+                   android:textStyle="italic"
+                   tools:ignore="RtlCompat"
+                   android:layout_marginTop="10dp"
+                   tools:layout_editor_absoluteX="16dp"
+                   tools:layout_editor_absoluteY="112dp" />
+
+
+               <TextView
+                   android:id="@+id/id_hora"
+                   android:layout_width="88dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/id_fecha"
+                   android:layout_marginTop="10dp"
+                   android:fontFamily="@font/aref_ruqaa"
+                   android:hint="Hora"
+                   android:paddingStart="12dp"
+                   android:paddingEnd="12dp"
+                   android:textColor="@color/black"
+                   android:textColorHint="@color/black" />
+
+
+           </LinearLayout>
+
+       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

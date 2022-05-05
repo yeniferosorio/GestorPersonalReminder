@@ -71,7 +71,7 @@ public class Navigation_Tareas_Importantes extends Fragment {
                 super.onAuthenticationSucceeded(result);
                 mensaje.setText("Reconocimiento de huella Exitoso");
                 Toast.makeText(getActivity(),"Reconocimiento de huella Exitoso",Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getActivity(),Importante.class);
+                Intent intent=new Intent(getActivity(),MainImportante.class);
                 startActivity(intent);
 
             }

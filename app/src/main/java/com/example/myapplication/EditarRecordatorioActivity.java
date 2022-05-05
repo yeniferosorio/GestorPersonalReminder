@@ -81,6 +81,7 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
 
                 Map<String, Object> recordatorio = new HashMap<>();
                 recordatorio.put("titulo", edittitulo.getText().toString());
+                recordatorio.put("search", edittitulo.getText().toString().toLowerCase());
                 recordatorio.put("descripcion", editdescripcion.getText().toString());
                 recordatorio.put("fecha", fecha.getText().toString());
                 recordatorio.put("hora", hora.getText().toString());

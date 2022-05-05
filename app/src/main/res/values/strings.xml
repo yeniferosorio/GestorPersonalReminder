@@ -36,6 +36,8 @@
     <string name="title_activity_tabbed_info">TabbedActivityInfo</string>
     <string name="default_web_clients_id" translatable="false">330961849402-q2j87unqe1up29eooemf47e3ohckjrsv.apps.googleusercontent.com</string>
     <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="search">Search</string>
+    <string name="title_activity_importante">Importante</string>
 
 
 </resources>

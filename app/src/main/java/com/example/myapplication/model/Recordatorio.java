@@ -12,6 +12,9 @@ public class Recordatorio implements Serializable {
     private String hora;
     private String fecha;
 
+    public Recordatorio(String id, String titulo, String descripcion) {
+    }
+
     public String getId() {
         return id;
     }

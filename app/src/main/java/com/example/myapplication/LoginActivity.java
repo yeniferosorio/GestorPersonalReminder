@@ -67,7 +67,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         crear_cuenta = findViewById(R.id.textcrearCuenta);
         btn_inicio_sesion = findViewById(R.id.btnIniciarSesion);
         buttonGoogle = findViewById(R.id.ButtonGoogle);
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_clients_id)).requestEmail().build();
+
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_clients_id)).requestEmail().build();
+
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -82,14 +85,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-        cambio_password.setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, RestPass.class));
-
-        });
-
         crear_cuenta.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, CrearCuenta.class);
             startActivity(intent);
+
+        });
+        cambio_password.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RestPass.class));
 
         });
 
