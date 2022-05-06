@@ -7,20 +7,6 @@
     android:background="@drawable/fondocardtres"
     tools:context=".EditarRecordatorioActivity">
 
-    <ImageButton
-        android:id="@+id/notificacion2"
-        android:layout_width="51dp"
-        android:layout_height="38dp"
-        android:background="#8c000000"
-        android:backgroundTint="#D1A8D8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747"
-        app:srcCompat="@drawable/ic_baseline_notifications_24" />
-
     <EditText
         android:id="@+id/edittitulo"
         android:layout_width="330dp"

@@ -5,7 +5,10 @@
     <item
         android:id="@+id/navigation_Midia"
         android:icon="@drawable/ic_baseline_wb_sunny_24"
-        android:title="Mi Día" />
+        android:title="Mi Día"
+
+
+        />
 
     <item
         android:id="@+id/navigation_Tareas_Importantes"

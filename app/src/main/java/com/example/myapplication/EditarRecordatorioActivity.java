@@ -102,7 +102,7 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         userReference.collection("recordatorio").document(r[0]).delete();
-                        Toast.makeText(EditarRecordatorioActivity.this, "Recordatorio eliminado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditarRecordatorioActivity.this, "Recordatorio Eliminado", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(EditarRecordatorioActivity.this, FragmentActivity.class);
                         startActivity(intent);
                         finish();

@@ -41,12 +41,9 @@ public class FragmentActivity extends AppCompatActivity {
         }
 
 
+
     }
 
-    public void logout(View view) {
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
-    }
 
     private void goLoginScreen() {
         Intent intent = new Intent(FragmentActivity.this, LoginActivity.class);

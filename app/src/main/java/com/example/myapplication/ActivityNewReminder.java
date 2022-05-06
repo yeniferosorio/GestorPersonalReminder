@@ -51,7 +51,7 @@ public class ActivityNewReminder extends AppCompatActivity {
     EditText descripcion, titulo;
     FloatingActionButton guardar, volver;
     TextView fecha, hora;
-    ImageView notify;
+
 
 
     private FirebaseDatabase firebaseDatabase;
@@ -87,7 +87,7 @@ public class ActivityNewReminder extends AppCompatActivity {
         hora = findViewById(R.id.txtEditHora);
         guardar = findViewById(R.id.buttonguardar);
         volver = findViewById(R.id.buttonVolver);
-        notify = findViewById(R.id.notificacion);
+
 
 
         volver.setOnClickListener(v -> {
