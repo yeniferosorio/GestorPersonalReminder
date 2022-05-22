@@ -39,34 +39,35 @@
 
                <TextView
                    android:id="@+id/id_titulo"
-                   android:layout_width="278dp"
+                   android:layout_width="349dp"
                    android:layout_height="wrap_content"
                    android:layout_marginTop="10dp"
-                   android:fontFamily="@font/aref_ruqaa"
+                   android:fontFamily="@font/changa_one"
                    android:hint="Titulo"
                    android:paddingStart="12dp"
                    android:paddingEnd="12dp"
                    android:tag="Titulo"
                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                   android:textColor="@color/com_smart_login_code"
-                   android:textColorHint="@color/com_smart_login_code"
+                   android:textColor="@color/browser_actions_title_color"
+                   android:textColorHint="@android:color/tertiary_text_light"
                    android:textSize="24sp" />
 
                <TextView
                    android:id="@+id/id_descripcion"
-                   android:layout_width="275dp"
+                   android:layout_width="349dp"
                    android:layout_height="61dp"
                    android:layout_below="@+id/id_titulo"
                    android:layout_marginTop="10dp"
-                   android:fontFamily="@font/aref_ruqaa"
+                   android:fontFamily="@font/bellefair"
                    android:hint="Descripción"
                    android:paddingStart="12dp"
                    android:paddingEnd="12dp"
-                   android:textAppearance="?attr/textAppearanceBody2"
+                   android:textAlignment="textStart"
                    android:textColor="@color/miniTitleColor"
                    android:textColorHint="@color/miniTitleColor"
-                   android:textSize="14sp"
-                   android:textStyle="italic" />
+                   android:textSize="17sp"
+                   android:textStyle="normal"
+                   app:autoSizeTextType="none" />
 
                <TextView
                    android:id="@+id/id_fecha"
@@ -75,20 +76,19 @@
                    android:layout_below="@+id/id_descripcion"
                    android:layout_gravity="bottom|center_vertical"
                    android:layout_marginTop="10dp"
-                  android:fontFamily="@font/aref_ruqaa"
-                   android:hint="Fecha"
                    android:drawablePadding="12dp"
+                   android:fontFamily="@font/bellefair"
+                   android:hint="Fecha"
                    android:paddingStart="12dp"
                    android:paddingEnd="12dp"
                    android:textAlignment="textStart"
                    android:textColor="@color/miniTitleColor"
                    android:textColorHint="@color/miniTitleColor"
                    android:textSize="14sp"
-                   android:textStyle="italic"
+                   android:textStyle="normal"
                    tools:ignore="RtlCompat"
                    tools:layout_editor_absoluteX="16dp"
                    tools:layout_editor_absoluteY="112dp" />
-
 
                <TextView
                    android:id="@+id/id_hora"
@@ -96,7 +96,7 @@
                    android:layout_height="wrap_content"
                    android:layout_below="@+id/id_fecha"
                    android:layout_marginTop="10dp"
-                   android:fontFamily="@font/aref_ruqaa"
+                   android:fontFamily="@font/bellefair"
                    android:hint="Hora"
                    android:paddingStart="12dp"
                    android:paddingEnd="12dp"

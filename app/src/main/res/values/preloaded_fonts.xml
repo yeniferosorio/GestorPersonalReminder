@@ -2,8 +2,12 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/acme</item>
+        <item>@font/aleo_light</item>
         <item>@font/amita</item>
+        <item>@font/andika_new_basic</item>
         <item>@font/aref_ruqaa</item>
         <item>@font/bellefair</item>
+        <item>@font/biorhyme_extralight</item>
+        <item>@font/changa_one</item>
     </array>
 </resources>

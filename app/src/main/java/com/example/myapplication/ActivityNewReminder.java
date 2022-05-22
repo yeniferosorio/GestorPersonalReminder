@@ -2,29 +2,23 @@ package com.example.myapplication;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
 import com.example.myapplication.model.NotificationID;
 import com.example.myapplication.model.OnReminderReceiver;
@@ -37,12 +31,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,7 +40,7 @@ public class ActivityNewReminder extends AppCompatActivity {
 
     EditText descripcion, titulo;
     FloatingActionButton guardar, volver;
-    TextView fecha, hora;
+    EditText fecha, hora;
 
 
 
@@ -83,8 +73,8 @@ public class ActivityNewReminder extends AppCompatActivity {
         DocumentReference userReference = db.collection("usuarios").document(userId);
         titulo = findViewById(R.id.editTexttitulo);
         descripcion = findViewById(R.id.MultiLinedesc);
-        fecha = findViewById(R.id.txtEditFecha);
-        hora = findViewById(R.id.txtEditHora);
+        fecha = findViewById(R.id.editfecha);
+        hora = findViewById(R.id.edithora);
         guardar = findViewById(R.id.buttonguardar);
         volver = findViewById(R.id.buttonVolver);
 

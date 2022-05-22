@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -35,7 +34,7 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
 
     EditText editdescripcion, edittitulo;
     FloatingActionButton buttonguardar, buttonvolver, buttonEliminar;
-    TextView fecha, hora;
+    EditText fecha, hora;
     private Calendar calendar;
     private TimePickerDialog timePickerDialog;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -61,8 +60,8 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
         String[] r = getIntent().getStringArrayExtra("item");
         edittitulo = findViewById(R.id.edittitulo);
         editdescripcion = findViewById(R.id.EditDescripcion);
-        fecha = findViewById(R.id.txtEditFecha);
-        hora = findViewById(R.id.txtEditHora);
+        fecha = findViewById(R.id.EditFecha);
+        hora = findViewById(R.id.EditHora);
         buttonguardar = findViewById(R.id.buttonguardar);
         buttonvolver = findViewById(R.id.buttonVolver);
         buttonEliminar = findViewById(R.id.ButtonEliminar);

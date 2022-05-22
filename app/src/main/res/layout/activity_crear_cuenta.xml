@@ -17,31 +17,42 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353"
-        app:srcCompat="@drawable/fondocrearcuenta" />
+        app:layout_constraintVertical_bias="0.502"
+        app:srcCompat="@drawable/opcioncrearcuentauno" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="384dp"
+        android:layout_height="420dp"
+        android:background="@drawable/botonparaavanzar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318" />
 
     <Button
         android:id="@+id/buttonCrearCuenta"
-        android:layout_width="248dp"
-        android:layout_height="50dp"
+        android:layout_width="301dp"
+        android:layout_height="39dp"
         android:background="@drawable/botonredondo"
         android:fontFamily="@font/acme"
         android:text="Crear Cuenta"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.671" />
 
     <EditText
         android:id="@+id/EditTextNombre"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@drawable/botonparaavanzar"
+        android:background="@drawable/paratexto"
         android:drawableStart="@drawable/ic_baseline_person"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/common_google_signin_btn_text_light"
         android:ems="10"
         android:fontFamily="@font/aref_ruqaa"
         android:hint="Nombre"
@@ -52,21 +63,22 @@
         android:textColor="@color/browser_actions_title_color"
         android:textColorHint="@android:color/tertiary_text_light"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@drawable/botonparaavanzar"
+        android:background="@drawable/paratexto"
         android:drawableStart="@drawable/ic_baseline_telefono"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/common_google_signin_btn_text_light"
         android:ems="10"
         android:fontFamily="@font/aref_ruqaa"
         android:hint="Telefono"
@@ -77,21 +89,22 @@
         android:textColor="@color/browser_actions_title_color"
         android:textColorHint="@android:color/tertiary_text_light"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@drawable/botonparaavanzar"
+        android:background="@drawable/paratexto"
         android:drawableStart="@drawable/ic_baseline_mail"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/common_google_signin_btn_text_light"
 
         android:ems="10"
         android:fontFamily="@font/aref_ruqaa"
@@ -103,21 +116,22 @@
         android:textColor="@color/browser_actions_title_color"
         android:textColorHint="@android:color/tertiary_text_light"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:background="@drawable/botonparaavanzar"
+        android:background="@drawable/paratexto"
         android:drawableStart="@android:drawable/ic_lock_idle_lock"
         android:drawablePadding="12dp"
-        android:drawableTint="#B8B3B3"
+        android:drawableTint="@color/common_google_signin_btn_text_light"
         android:ems="10"
 
         android:fontFamily="@font/aref_ruqaa"
@@ -129,59 +143,63 @@
         android:textColor="@color/browser_actions_title_color"
         android:textColorHint="@android:color/tertiary_text_light"
         android:textSize="16sp"
+        android:textStyle="bold"
         android:verticalScrollbarPosition="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.575" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="160dp"
-        android:layout_height="36dp"
+        android:layout_width="158dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/aref_ruqaa"
         android:text="¿Ya tienes cuenta?"
+        android:textAlignment="center"
         android:textColor="@color/browser_actions_title_color"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <TextView
         android:id="@+id/TextIniciarSesion"
         android:layout_width="114dp"
-        android:layout_height="29dp"
+        android:layout_height="19dp"
         android:drawablePadding="12dp"
         android:fontFamily="@font/aref_ruqaa"
         android:text="Inicia Sesión"
         android:textAlignment="center"
-        android:textColor="@color/purpuraoscuro"
+        android:textColor="@color/gradientLightBlue"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.834" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="179dp"
         android:layout_height="43dp"
-        android:fontFamily="@font/aref_ruqaa"
+        android:fontFamily="@font/changa_one"
         android:text="Crea tu Cuenta"
         android:textAlignment="center"
         android:textColor="@color/browser_actions_title_color"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.186" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ulllltimooooodisenuevorec">
+        android:background="@color/blanco">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="533dp"
+            android:layout_height="1354dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/opcioneditarrecordatoriouno" />
+
+        <TextView
+            android:id="@+id/textVie"
+            android:layout_width="383dp"
+            android:layout_height="457dp"
+            android:background="@drawable/botonparaavanzar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.267" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonguardar"
@@ -19,13 +41,13 @@
             android:layout_height="54dp"
             android:layout_marginEnd="28dp"
             android:clickable="true"
-            app:backgroundTint="#5f4339"
+            app:backgroundTint="@color/gradientLightBlue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.94"
+            app:layout_constraintVertical_bias="0.861"
             app:srcCompat="@android:drawable/ic_menu_save"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -34,44 +56,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:backgroundTint="@android:color/holo_green_light"
+            app:backgroundTint="@color/gradientOrange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.943"
+            app:layout_constraintVertical_bias="0.863"
             app:srcCompat="?attr/actionModeCloseDrawable"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editTexttitulo"
-            android:layout_width="376dp"
-            android:layout_height="60dp"
-            android:background="@drawable/botonparaavanzar"
+            android:layout_width="338dp"
+            android:layout_height="46dp"
+            android:background="@drawable/paratexto"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:fontFamily="@font/aref_ruqaa"
+            android:fontFamily="@font/changa_one"
             android:hint="Titulo"
             android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/browser_actions_title_color"
+            android:textColorHint="@android:color/tertiary_text_light"
             android:textSize="20sp"
-            android:textStyle="bold|italic"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.165" />
+            app:layout_constraintVertical_bias="0.24" />
 
         <EditText
             android:id="@+id/MultiLinedesc"
-            android:layout_width="384dp"
-            android:layout_height="173dp"
-            android:background="@drawable/botonparaavanzar"
+            android:layout_width="338dp"
+            android:layout_height="171dp"
+            android:background="@drawable/paratexto"
             android:drawablePadding="12dp"
             android:ems="10"
             android:fontFamily="@font/aref_ruqaa"
@@ -82,79 +104,79 @@
             android:paddingEnd="12dp"
             android:textColor="@color/miniTitleColor"
             android:textColorHint="@color/miniTitleColor"
-            android:textStyle="italic"
+            android:textSize="17dp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintHorizontal_bias="0.479"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.367" />
+            app:layout_constraintVertical_bias="0.412" />
 
-        <TextView
-            android:id="@+id/txtEditFecha"
-            android:layout_width="153dp"
-            android:layout_height="48dp"
-            android:background="@drawable/botonparaavanzar"
+        <EditText
+            android:id="@+id/editfecha"
+            android:layout_width="172dp"
+            android:layout_height="39dp"
+            android:background="@drawable/paratexto"
             android:clickable="true"
-            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/ic_baseline_calendar_todayy_24"
+            android:drawableTint="@color/common_google_signin_btn_text_light"
             android:editable="false"
+            android:ems="10"
             android:fontFamily="@font/aref_ruqaa"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:textAlignment="center"
-            android:textColor="@color/miniTitleColor"
-            android:textSize="16sp"
+            android:textAlignment="textStart"
+            android:textColor="@color/browser_actions_title_color"
+            android:textColorHint="@android:color/tertiary_text_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.286"
+            app:layout_constraintHorizontal_bias="0.146"
+
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.661" />
+            app:layout_constraintVertical_bias="0.604"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-        <TextView
-            android:id="@+id/txtEditHora"
-            android:layout_width="153dp"
-            android:layout_height="48dp"
-            android:background="@drawable/botonparaavanzar"
+        <EditText
+            android:id="@+id/edithora"
+            android:layout_width="172dp"
+            android:layout_height="39dp"
+            android:background="@drawable/paratexto"
             android:clickable="true"
-            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/ic_baseline_query_builder_24"
+            android:drawableTint="@color/common_google_signin_btn_text_light"
             android:editable="false"
+            android:ems="10"
             android:fontFamily="@font/aref_ruqaa"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/browser_actions_title_color"
+            android:textColorHighlight="@color/browser_actions_title_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.146"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.682"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="283dp"
+            android:layout_height="45dp"
+            android:fontFamily="@font/changa_one"
+            android:text="Crea tu Recordatorio"
             android:textAlignment="center"
-            android:textColor="@color/miniTitleColor"
-            android:textSize="16sp"
+            android:textColor="@color/browser_actions_title_color"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.286"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.759" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.662"
-            app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="49dp"
-            android:layout_height="47dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.044"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.76"
-            app:srcCompat="@drawable/ic_baseline_access_time_24" />
+            app:layout_constraintVertical_bias="0.141" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
