@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,6 +8,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -37,10 +40,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Navigation_Midia extends Fragment {
     private RecyclerView recycler;
     FloatingActionButton cerrarSesion;
+
 
 
     private FirebaseAuth firebaseAuth;
@@ -108,7 +113,7 @@ public class Navigation_Midia extends Fragment {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage("¿Desea cerrar Sesión?");
+                builder.setMessage("¿Desea Cerrar Sesión?");
                 builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -158,19 +163,25 @@ public class Navigation_Midia extends Fragment {
         listarRecordatorios();
 
 
-        FloatingActionButton btnAgregarRecordatorio = view.findViewById(R.id.botonAñadir);
-        btnAgregarRecordatorio.setOnClickListener(v -> {
+        FloatingActionButton btnagregarrecordatorio = view.findViewById(R.id.botonAñadir);
+        btnagregarrecordatorio.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ActivityNewReminder.class);
             startActivity(intent);
         });
 
 
+
+
+
     }
+
 
     public void dbFirebase(DatabaseReference databaseReference) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
     }
+
+
 
 
     private void inicializarFirebase() {

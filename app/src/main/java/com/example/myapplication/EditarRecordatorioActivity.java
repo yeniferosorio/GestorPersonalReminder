@@ -1,12 +1,17 @@
 package com.example.myapplication;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,6 +21,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.model.NotificationID;
+import com.example.myapplication.model.OnReminderReceiver;
 import com.example.myapplication.model.Recordatorio;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -85,6 +92,8 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
                 recordatorio.put("fecha", fecha.getText().toString());
                 recordatorio.put("hora", hora.getText().toString());
                 userReference.collection("recordatorio").document(r[0]).update(recordatorio);
+                createNotificationChannel();
+                crearNotificacion(calendar, edittitulo.getText().toString(), editdescripcion.getText().toString());
                 Intent i = new Intent(EditarRecordatorioActivity.this, FragmentActivity.class);
                 startActivity(i);
                 finish();
@@ -169,6 +178,33 @@ public class EditarRecordatorioActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String name = String.valueOf(NotificationID.getActualID());
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(String.valueOf(NotificationID.getActualID()), name, importance);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void crearNotificacion(Calendar calendar, String textTitle, String textContent) {
+
+        Intent intent = new Intent(getApplicationContext(), OnReminderReceiver.class);
+        intent.putExtra("title",textTitle);
+        intent.putExtra("content",textContent);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),NotificationID.getID(),intent,0);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(),
+                pendingIntent);
+
+
+
     }
 
 

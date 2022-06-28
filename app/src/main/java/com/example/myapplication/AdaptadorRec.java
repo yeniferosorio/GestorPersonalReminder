@@ -130,9 +130,7 @@ public class AdaptadorRec extends RecyclerView.Adapter<AdaptadorRec.viewHolderRe
         void onNoteClick(Recordatorio item);
 
     }
-    /*
 
-     * */
 
 
 }

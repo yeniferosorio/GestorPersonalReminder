@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="384dp"
-        android:layout_height="420dp"
+        android:layout_width="387dp"
+        android:layout_height="434dp"
         android:background="@drawable/botonparaavanzar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,14 +36,14 @@
         android:layout_width="301dp"
         android:layout_height="39dp"
         android:background="@drawable/botonredondo"
-        android:fontFamily="@font/acme"
+        android:fontFamily="@font/andika_new_basic"
         android:text="Crear Cuenta"
-        android:textColor="@color/black"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <EditText
         android:id="@+id/EditTextNombre"

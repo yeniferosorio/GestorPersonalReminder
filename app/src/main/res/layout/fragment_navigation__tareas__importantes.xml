@@ -15,22 +15,35 @@
         android:layout_height="match_parent"
         android:background="@color/blanco">
 
+
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="414dp"
-            android:layout_height="833dp"
-            android:src="@drawable/fondohuellacinco"
+            android:layout_width="753dp"
+            android:layout_height="1340dp"
+            android:background="@drawable/opcioneditarrecordatoriouno"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.742"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.318" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="372dp"
+            android:layout_height="428dp"
+            android:background="@drawable/botonparaavanzar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.409" />
 
         <Button
             android:id="@+id/ButtonHuella"
-            android:layout_width="246dp"
+            android:layout_width="275dp"
             android:layout_height="48dp"
             android:background="@drawable/botonredondo"
             android:backgroundTintMode="screen"
@@ -38,53 +51,72 @@
             android:drawablePadding="10dp"
             android:drawableTint="@color/blanco"
             android:ems="10"
+            android:fontFamily="@font/andika_new_basic"
             android:gravity="center"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:text="INGRESA CON TU HUELLA"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.617" />
+            app:layout_constraintVertical_bias="0.549" />
 
         <TextView
             android:id="@+id/textViewMensaje"
             android:layout_width="264dp"
             android:layout_height="62dp"
+            android:fontFamily="@font/andika_new_basic"
             android:text="Haz click en el botón"
             android:textAlignment="center"
-            android:textColor="@color/purpuraoscuro"
-            android:textSize="14sp"
-            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.516" />
+            app:layout_constraintVertical_bias="0.405" />
 
         <Button
             android:id="@+id/buttonPing"
-            android:layout_width="246dp"
+            android:layout_width="275dp"
             android:layout_height="48dp"
             android:background="@drawable/botonredondo"
-            android:drawableStart="@android:drawable/ic_lock_idle_lock"
-            android:text="ingresa con ping "
             android:backgroundTintMode="screen"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
             android:drawablePadding="10dp"
             android:drawableTint="@color/blanco"
             android:ems="10"
+            android:fontFamily="@font/andika_new_basic"
             android:gravity="center"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
+            android:text="ingresa con ping "
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.714" />
+            app:layout_constraintVertical_bias="0.674" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="202dp"
+            android:layout_height="41dp"
+            android:backgroundTint="#0E0E0E"
+            android:fontFamily="@font/changa_one"
+            android:text="Bienvenido"
+            android:textAlignment="center"
+            android:textColor="#050505"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.239" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

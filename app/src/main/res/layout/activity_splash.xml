@@ -18,9 +18,9 @@
 
         <ImageView
             android:id="@+id/splash"
-            android:layout_width="569dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/splashtres" />
+            android:layout_width="665dp"
+            android:layout_height="767dp"
+            android:src="@drawable/splashprueba" />
 
     </LinearLayout>
 

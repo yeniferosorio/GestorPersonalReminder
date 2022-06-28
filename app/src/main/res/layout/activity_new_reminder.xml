@@ -15,19 +15,20 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="533dp"
-            android:layout_height="1354dp"
+            android:layout_width="1056dp"
+            android:layout_height="1750dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintHorizontal_bias="0.548"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.409"
             app:srcCompat="@drawable/opcioneditarrecordatoriouno" />
 
         <TextView
             android:id="@+id/textVie"
-            android:layout_width="383dp"
-            android:layout_height="457dp"
+            android:layout_width="382dp"
+            android:layout_height="468dp"
             android:background="@drawable/botonparaavanzar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,17 +38,17 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonguardar"
-            android:layout_width="58dp"
-            android:layout_height="54dp"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
             android:layout_marginEnd="28dp"
             android:clickable="true"
-            app:backgroundTint="@color/gradientLightBlue"
+            app:backgroundTint="#5c6bc0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.861"
+            app:layout_constraintVertical_bias="0.943"
             app:srcCompat="@android:drawable/ic_menu_save"
             tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -56,14 +57,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:backgroundTint="@color/gradientOrange"
+            app:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.863"
-            app:srcCompat="?attr/actionModeCloseDrawable"
+            app:layout_constraintVertical_bias="0.946"
+            app:srcCompat="@drawable/ic_baseline_navigate_before_24"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
@@ -80,7 +81,7 @@
             android:paddingEnd="12dp"
             android:textColor="@color/browser_actions_title_color"
             android:textColorHint="@android:color/tertiary_text_light"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +105,7 @@
             android:paddingEnd="12dp"
             android:textColor="@color/miniTitleColor"
             android:textColorHint="@color/miniTitleColor"
-            android:textSize="17dp"
+            android:textSize="20sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +178,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.141" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botonSpeak"
+            android:layout_width="57dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|bottom"
+            android:background="#FDFAFA"
+            android:backgroundTint="#5c6bc0"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_baseline_mic_24"
+            app:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.921"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.823"
+            app:rippleColor="#FBF8F8"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

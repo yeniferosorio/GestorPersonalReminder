@@ -82,7 +82,7 @@ public class CrearCuenta extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(CrearCuenta.this, "Ya existe una cuenta para el correo electrónico ingresado, pruebe con otro correo", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CrearCuenta.this, "Ya existe una cuenta para el correo electrónico ingresado,o el formato  no es valido", Toast.LENGTH_SHORT).show();
                     }
                 });
 

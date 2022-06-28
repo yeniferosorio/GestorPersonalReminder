@@ -39,7 +39,7 @@
         android:background="@drawable/botonredondo"
         android:fontFamily="@font/acme"
         android:text="Restablecer Contraseña"
-        android:textColor="@color/black"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"

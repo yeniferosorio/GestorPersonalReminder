@@ -9,26 +9,26 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="533dp"
-        android:layout_height="1354dp"
+        android:layout_width="653dp"
+        android:layout_height="1484dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475"
         app:srcCompat="@drawable/opcioneditarrecordatoriouno" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="391dp"
-        android:layout_height="447dp"
+        android:layout_width="379dp"
+        android:layout_height="469dp"
         android:background="@drawable/botonparaavanzar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <EditText
         android:id="@+id/edittitulo"
@@ -76,52 +76,51 @@
         app:layout_constraintVertical_bias="0.434" />
 
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:backgroundTint="@color/gradientOrange"
+        app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914"
-        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:layout_constraintVertical_bias="0.954"
+        app:srcCompat="@drawable/ic_baseline_navigate_before_24"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonguardar"
-        android:layout_width="58dp"
-        android:layout_height="54dp"
+        android:layout_width="57dp"
+        android:layout_height="56dp"
         android:layout_marginEnd="28dp"
 
         android:clickable="true"
-        app:backgroundTint="@color/gradientLightBlue"
+        app:backgroundTint="#5c6bc0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803"
+        app:layout_constraintVertical_bias="0.825"
         app:srcCompat="@android:drawable/ic_menu_save"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonEliminar"
-        android:layout_width="58dp"
-        android:layout_height="54dp"
+        android:layout_width="57dp"
+        android:layout_height="56dp"
         android:layout_marginEnd="28dp"
         android:clickable="true"
-        app:backgroundTint="@color/gradientLightBlue"
+        app:backgroundTint="#5c6bc0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911"
+        app:layout_constraintVertical_bias="0.954"
         app:srcCompat="@android:drawable/ic_menu_delete"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -165,7 +164,7 @@
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715"
+        app:layout_constraintVertical_bias="0.706"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText

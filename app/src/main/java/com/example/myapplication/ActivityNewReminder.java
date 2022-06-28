@@ -1,24 +1,32 @@
 package com.example.myapplication;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.myapplication.model.NotificationID;
 import com.example.myapplication.model.OnReminderReceiver;
@@ -34,13 +42,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class ActivityNewReminder extends AppCompatActivity {
 
     EditText descripcion, titulo;
-    FloatingActionButton guardar, volver;
+    FloatingActionButton guardar, volver,btnagragarrecordatorioaudio;
     EditText fecha, hora;
+    private  int RCODEE = 28;
 
 
 
@@ -55,6 +65,7 @@ public class ActivityNewReminder extends AppCompatActivity {
     int year;
     int month;
     int day;
+    int REQUEST= 200;
 
 
 
@@ -77,7 +88,16 @@ public class ActivityNewReminder extends AppCompatActivity {
         hora = findViewById(R.id.edithora);
         guardar = findViewById(R.id.buttonguardar);
         volver = findViewById(R.id.buttonVolver);
+        btnagragarrecordatorioaudio = findViewById(R.id.botonSpeak);
 
+        btnagragarrecordatorioaudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                capturarVoz();
+                permisos();
+
+            }
+        });
 
 
         volver.setOnClickListener(v -> {
@@ -183,6 +203,28 @@ public class ActivityNewReminder extends AppCompatActivity {
 
     }
 
+    private void capturarVoz() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+
+
+        if (intent.resolveActivity(getPackageManager())!=null){
+            startActivityForResult( intent,RCODEE);
+        }else{
+            Log.e("ERROR","Su dispositivo no admite entrada de voz");
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==RCODEE && resultCode==RESULT_OK && data!=null){
+            ArrayList<String>result =data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            descripcion.setText(result.get(0));
+
+        }
+    }
 
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
@@ -190,6 +232,15 @@ public class ActivityNewReminder extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
         firebaseAuth = FirebaseAuth.getInstance();
+    }
+    private void permisos(){
+      int perimisoaudio=  ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
+        if (perimisoaudio== PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(this, "Permiso de audio consedido", Toast.LENGTH_SHORT).show();
+
+        }else{
+            requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},REQUEST);
+        }
     }
 
 

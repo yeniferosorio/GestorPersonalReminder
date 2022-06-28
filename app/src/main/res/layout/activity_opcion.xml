@@ -11,7 +11,7 @@
     <FrameLayout
         android:id="@+id/frame_conteiner"
         android:layout_width="match_parent"
-        android:layout_height="672dp"
+        android:layout_height="708dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </FrameLayout>
@@ -25,7 +25,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="#7986cb"
+        android:background="#49599a"
         android:elevation="8dp"
         app:itemIconTint="@color/blanco"
         app:labelVisibilityMode="selected"

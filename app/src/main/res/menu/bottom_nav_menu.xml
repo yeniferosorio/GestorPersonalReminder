@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/navigation_Midia"
-        android:icon="@drawable/ic_baseline_wb_sunny_24"
+        android:icon="@drawable/ic_baseline_playlist_add_24"
         android:title="Mi Día"
 
 
@@ -12,8 +12,10 @@
 
     <item
         android:id="@+id/navigation_Tareas_Importantes"
+        
         android:icon="@drawable/ic_baseline_star_border_24"
-        android:title="Importante" />
+        android:title="Importante"
+        android:visible="true" />
 
 
 </menu>
